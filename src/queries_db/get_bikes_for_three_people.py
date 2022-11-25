@@ -8,7 +8,7 @@ def get_all_bikes():
     "collection": "bikes",
     "database": "rental_bikes",
     "dataSource": "Sandbox",
-    "filter": {"avalaibility":True}
+    "filter": {"characteristics.bike_capacity":3}
     })
 
     headers = {
