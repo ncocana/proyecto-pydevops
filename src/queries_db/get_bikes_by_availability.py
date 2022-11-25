@@ -1,14 +1,14 @@
 import requests
 import json
 
-def get_all_bikes():
+def get_bikes_by_availability(boolean):
     url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
     "collection": "bikes",
     "database": "rental_bikes",
     "dataSource": "Sandbox",
-    "filter": {"characteristics.bike_capacity":2}
+    "filter": {"avalaibility":boolean}
     })
 
     headers = {
@@ -26,9 +26,17 @@ def get_all_bikes():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for i in get_all_bikes()['documents']:
+    for document in get_bikes_by_availability(True)['documents']:
         try:
-            print(i['type'], '-', i['avalaibility'], '-', i['price_of_rent_per_hour'])
+            print(document['type'], '-', document['avalaibility'], '-', document['price_of_rent_per_hour'])
+        except KeyError:
+            print("One of the field specified is not present on the document's collection. Try another document or field.")
+            continue
+
+    #Tests if it gets KeyError or not inside a "for in".
+    for document in get_bikes_by_availability(False)['documents']:
+        try:
+            print(document['type'], '-', document['avalaibility'], '-', document['price_of_rent_per_hour'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             continue

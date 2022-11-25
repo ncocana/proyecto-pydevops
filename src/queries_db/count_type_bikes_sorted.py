@@ -1,7 +1,7 @@
 import requests
 import json
 
-def get_all_bikes():
+def count_type_bikes_sorted():
     url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
 
     payload = json.dumps({
@@ -27,9 +27,9 @@ def get_all_bikes():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for i in get_all_bikes()['documents']:
+    for document in count_type_bikes_sorted()['documents']:
         try:
-            print(i['_id'], '-', i['count'])
+            print(document['_id'], '-', document['count'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             continue

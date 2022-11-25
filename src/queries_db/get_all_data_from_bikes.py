@@ -1,7 +1,7 @@
 import requests
 import json
 
-def get_all_bikes():
+def get_all_data_from_bikes():
     url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
@@ -25,7 +25,7 @@ def get_all_bikes():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for document in get_all_bikes()['documents']:
+    for document in get_all_data_from_bikes()['documents']:
         try:
             print(document['type'], '-', document['mark'])
         except KeyError:
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     #Tests if it gets KeyError outside a "for in".
     try:
-        print(get_all_bikes()['documents'][0]['type'])
+        print(get_all_data_from_bikes()['documents'][0]['type'])
     except KeyError:
         print("This field is not present on the document's collection. Try another document or field.")
         pass
