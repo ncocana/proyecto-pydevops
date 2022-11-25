@@ -30,7 +30,7 @@ if __name__ == "__main__":
             print(document['type'], '-', document['mark'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
-            pass
+            continue
 
     #Tests if it gets KeyError outside a "for in".
     try:

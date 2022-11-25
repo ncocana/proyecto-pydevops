@@ -31,7 +31,7 @@ if __name__ == "__main__":
                 print(document['name_area'], '-', company['name'], '-', company['contact']['phone_number'])
             except KeyError:
                 print("One of the field specified is not present on the document's collection. Try another document or field.")
-                pass
+                continue
 
     #Tests if it gets KeyError outside a "for in".
     try:

@@ -30,18 +30,18 @@ if __name__ == "__main__":
             print(document['name'], '-', document['description']['size'], '-', document['price'], '-', document['on_sale'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
-            pass    
+            continue
     
     #Tests if it doesn't get KeyError outside a "for in".
-    '''try:
+    try:
         print(get_all_data_from_accessories()['documents'][0]['description']['size'][0])
     except KeyError:
         print("This field is not present on the document's collection. Try another document or field.")
-        pass'''
+        pass
 
     #Tests if it gets KeyError outside a "for in".
-    '''try:
+    try:
         print(get_all_data_from_accessories()['documents'][4]['description']['size'][0])
     except KeyError:
         print("This field is not present on the document's collection. Try another document or field.")
-        pass'''
+        pass

@@ -31,4 +31,4 @@ if __name__ == "__main__":
             print(i['type'], '-', i['avalaibility'], '-', i['price_of_rent_per_hour'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
-            pass
+            continue

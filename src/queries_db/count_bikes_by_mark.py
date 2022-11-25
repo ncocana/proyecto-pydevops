@@ -32,4 +32,4 @@ if __name__ == "__main__":
             print(i['_id'], '-', i['count'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
-            pass
+            continue
