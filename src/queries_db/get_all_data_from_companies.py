@@ -1,15 +1,13 @@
 import requests
 import json
 
-def get_all_bikes():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
+def get_all_data_from_companies():
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
-        "collection": "bikes",
+        "collection": "companies",
         "database": "rental_bikes",
-        "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
-                    { "$sort": { "count": 1 } }]
+        "dataSource": "Sandbox"
     })
 
     headers = {
@@ -27,9 +25,16 @@ def get_all_bikes():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for i in get_all_bikes()['documents']:
+    for document in get_all_data_from_companies()['documents']:
         try:
-            print(i['_id'], '-', i['count'])
+            print(document['name'], '-', document['address']['street_address'], '-', document['contact']['email_address'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             pass
+
+    #Tests if it gets KeyError outside a "for in".
+    try:
+        print(get_all_data_from_companies()['documents'][0]['address']['street_address'])
+    except KeyError:
+        print("This field is not present on the document's collection. Try another document or field.")
+        pass

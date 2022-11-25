@@ -23,7 +23,19 @@ def get_all_bikes():
     return result
 
 if __name__ == "__main__":
-    for i in get_all_bikes()['documents']:
-        print(i['type'], '-', i['mark'])
 
-    #print(get_all_bikes()['documents'][0]['type'])
+    #Tests if it gets KeyError or not inside a "for in".
+    for document in get_all_bikes()['documents']:
+        try:
+            print(document['type'], '-', document['mark'])
+        except KeyError:
+            print("One of the field specified is not present on the document's collection. Try another document or field.")
+            pass
+
+    #Tests if it gets KeyError outside a "for in".
+    try:
+        print(get_all_bikes()['documents'][0]['type'])
+    except KeyError:
+        print("This field is not present on the document's collection. Try another document or field.")
+        pass
+        
