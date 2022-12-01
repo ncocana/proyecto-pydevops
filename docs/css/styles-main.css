@@ -1,0 +1,58 @@
+/* STYLES COMMON FOR ALL HTMLS */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: black;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+.container-header-logo {
+    margin-left: 30px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 10px;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 20px 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-menu a:active { 
+    color: black; 
+}
+
+.nav-menu a:hover {
+    background: blue;
+}
+
+.container-box {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+}
