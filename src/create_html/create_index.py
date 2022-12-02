@@ -37,7 +37,7 @@ def create_index():
         <header>
             <div class="container-header">
                 <div class="container-header-logo">
-                    <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+                    <img src="./img/logo-webpage.png" height="65px" width="90" alt="rental logo">  
                 </div>
                 <nav class="nav-menu">
                     <a href="./index.html">Inicio</a>
@@ -55,39 +55,13 @@ def create_index():
             </div>
         </section>
         <footer>
-            <div class="footer-content">
-                <div class="left-box">
-                    <div class="upper">
-                        <div class="topic">About us</div>
-                    <p class="pfooter">Hola</p>
-                </div>
-                <div class="lower">
-                    <div class="topic">Contact</div>
-                    <div class="phone">
-                        <a href=""><i class="fa fa-phone">97156492</i></a>
-                    </div>
-                    <div class="email">
-                        <a href=""><i class="fa fa-envelope">adcd@gmail.com</i></a>
-                    </div>
-                </div>
-                </div>
-                <div class="middle box">
-                <div><a href="">1</a></div>
-                <div><a href="">2</a></div>
-                <div><a href="">3</a></div>
-                </div>
-                <div class="right-box">
-                    <div class="topic">Subscribe</div>
-                    <input type="text" placeholder="Enter e-mail address">
-                    <input type="submit" name="" value="Send">
-                </div>
-                <div class="bottom">
-                    <p>Copyright &#169; 2022</p>
-                </div>
+            <div class="bottom">
+                <p id="pcopy">Copyright &#169; 2022</p>
             </div>
         </footer>
     </body>
-</html>'''
+</html>
+'''
 
     #Writes the content of the variable 'html' in the file created previously (index.html), and then closes the file.
     file.write(html)
