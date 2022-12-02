@@ -16,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 63px;
+    height: auto;
     background: black;
     position: relative;
     width: 100%;
@@ -29,6 +29,7 @@ body {
 
 .nav-menu {
     display: flex;
+    flex-wrap: wrap;
     margin-right: 10px;
 }
 
@@ -54,5 +55,4 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    text-align: center;
 }
