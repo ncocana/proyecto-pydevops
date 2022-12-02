@@ -7,18 +7,19 @@ from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
 def create_catalog():
-    
+
     #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/catalog.html'.
     working_directory = Path(getCurrentDirectory())
     path = working_directory / "docs" / "catalog.html"
 
     #Opens the file with the purpose to write on it.
-    file = path.open('w')
+    file = path.open('w', encoding="utf-8")
 
     #Saves the html content into the variable 'html'.
     html = '''<!DOCTYPE html>
     <html lang="en">
         <head>
+            <title>Rental Bike - Catalog</title>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +45,7 @@ def create_catalog():
                         <a href="./index.html">Inicio</a>
                         <a href="./catalog.html">Catalog</a>
                         <a href="./shops.html">Shops</a>
-                        <a href="">Contact</a>
+                        <a href="./contact.html">Contact</a>
                         <a href="">Products</a>
                     </nav>
                 </div>

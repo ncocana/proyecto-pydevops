@@ -1,7 +1,3 @@
-#To succesfuslly invoke the function 'get_all_data_from_bikes', as it is in another folder,
-#we need to specify its path with 'sys'. And then it is possible to call it.
-from sys import path as systemPath
-systemPath.insert(0, './src/')
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
@@ -12,12 +8,13 @@ def create_index():
     path = working_directory / "docs" / "index.html"
 
     #Opens the file with the purpose to write on it.
-    file = path.open('w')
+    file = path.open('w', encoding="utf-8")
 
     #Saves the html content into the variable 'html'.
     html = '''<!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Rental Bike - Homepage</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +40,7 @@ def create_index():
                     <a href="./index.html">Inicio</a>
                     <a href="./catalog.html">Catalog</a>
                     <a href="./shops.html">Shops</a>
-                    <a href="">Contact</a>
+                    <a href="./contact.html">Contact</a>
                     <a href="">Products</a>
                 </nav>
             </div>
