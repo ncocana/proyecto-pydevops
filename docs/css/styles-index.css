@@ -6,7 +6,7 @@
     height: 100vh;
     background-image: url(../img/background-index.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -29,4 +29,15 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow : 3px 3px 10px white;
+}
+
+footer .bottom #pcopy{
+    padding-right: 10px;
+    text-align: center;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow : 3px 3px 20px rgba(255, 255, 255, 0.74);
+    margin-top: 350px;
 }
