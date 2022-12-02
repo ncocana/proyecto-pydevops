@@ -11,13 +11,16 @@
 }
 
 .container-box .box-catalog {
-    height: 570px;
+    height: auto;
     width: 300px;
     background: #171717;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .container-box .box-catalog i {
@@ -42,12 +45,24 @@
 	padding: 20px 0;
 	color:white;
 	padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
 }
 
 .container-list-item {
 	padding: 0.25em;
 	font-size: 15px;
     font-size: 15px;
+}
+
+.container-list-item h4 {
+	padding: 10px;
+    text-align: center;
+}
+
+.box-catalog-button {
+    padding: 20px;
 }
 
 .container-list-button {
