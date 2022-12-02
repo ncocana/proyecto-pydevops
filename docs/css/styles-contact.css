@@ -1,0 +1,73 @@
+/* STYLES EXCLUSIVES OF CONTACT.HTML */
+
+#background-contact {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background-contact.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-box .box-contact {
+    height: auto;
+    width: 95%;
+    background: rgb(255, 255, 255);
+    padding-left: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, .3);
+    margin: 20px;
+}
+
+.container-box .box-contact h2 {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.form-item {
+    padding: 0.2em;
+    padding-left: 37%;
+}
+
+label, input, select, textarea {
+	padding: 0.20em;
+}
+
+label {
+    font-weight: bold;
+}
+
+#name_surname, select, textarea {
+    background-color: rgb(229, 227, 209);
+    border-radius: 5px;
+}
+
+.form-item-button {
+    padding-bottom: 20px;
+    padding-left: 46%;
+}
+
+.form-item-button .button {
+    background-color: rgba(200, 200, 200, 0.171);
+    box-shadow: 0 0 5px;
+}
+
+.button:active { 
+    background-color: rgb(200, 200, 200);
+}  
+
+/* iPhone SE*/
+@media screen and ((min-width: 375px) and (max-width: 667px)){
+    .form-item {
+        padding: 0.2em;
+    }
+
+    .form-item-button {
+        padding-bottom: 20px;
+        padding-left: 32%;
+    }
+}
