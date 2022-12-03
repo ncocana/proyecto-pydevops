@@ -1,14 +1,14 @@
 import requests
 import json
 
-def count_type_bikes_sorted():
+def count_bikes_by_mark():
     url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
         "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
+        "pipeline": [{"$group": {"_id": "$mark", "count": {"$sum":1}}},
                     { "$sort": { "count": 1 } }]
     })
 
@@ -27,7 +27,7 @@ def count_type_bikes_sorted():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for document in count_type_bikes_sorted()['documents']:
+    for document in count_bikes_by_mark()['documents']:
         try:
             print(document['_id'], '-', document['count'])
         except KeyError:
