@@ -2,14 +2,14 @@ import requests
 import json
 
 def get_all_bikes():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
-        "collection": "bikes",
-        "database": "rental_bikes",
-        "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
-                    { "$sort": { "count": 1 } }]
+    "collection": "bikes",
+    "database": "rental_bikes",
+    "dataSource": "Sandbox",
+    "filter": {"avalaibility":True},
+    "projection": {"_id":0, "type":1, "avalaibility":1, "price_of_rent_per_hour":1}
     })
 
     headers = {
@@ -26,4 +26,4 @@ def get_all_bikes():
 
 if __name__ == "__main__":
     for i in get_all_bikes()['documents']:
-        print(i['_id'], '-', i['count'])
+        print(i['type'], '-', i['avalaibility'], '-', i['price_of_rent_per_hour'])
