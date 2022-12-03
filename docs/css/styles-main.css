@@ -56,3 +56,24 @@ body {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.container-footer {
+    height: auto;
+    background: black;
+    box-shadow: 0 0 10px rgba(60, 60, 60, 0.668);
+}
+
+#copyright {
+    padding-right: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.index-footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}

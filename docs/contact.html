@@ -18,51 +18,59 @@
         <base target="_self">
     </head>
     <body id="background-contact">
-        <header>
-            <div class="container-header">
-                <div class="container-header-logo">
-                    <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+        <div class="index-footer">
+            <header>
+                <div class="container-header">
+                    <div class="container-header-logo">
+                        <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+                    </div>
+                    <nav class="nav-menu">
+                        <a href="./index.html">Inicio</a>
+                        <a href="./catalog.html">Catalog</a>
+                        <a href="./shops.html">Shops</a>
+                        <a href="./contact.html">Contact</a>
+                        <a href="">Products</a>
+                    </nav>
                 </div>
-                <nav class="nav-menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./catalog.html">Catalog</a>
-                    <a href="./shops.html">Shops</a>
-                    <a href="./contact.html">Contact</a>
-                    <a href="">Products</a>
-                </nav>
-            </div>
-        </header>
-        <section>
-            <div class="container-box">
-                <div class="box-contact">
-                    <h2>Contact formulary</h2>
-                    <form action="#" method="get">
-                        <div class="form-item">
-                            <label for="name_surname">Full name:</label>
-                            <input type="text" id="name_surname" name="name_surname" placeholder="Write your full name." required>
-                        </div>
-                        <div class="form-item">
-                            <label for="reason">Reason for consultation:</label>
-                            <select id="reason" name="reason" required>
-                                <option value="">Choose an option</option>
-                                <option value="bike">Bike</option>
-                                <option value="product">Product</option>
-                                <option value="business">Proposal Business</option>
-                            </select>
-                        </div>
-                        <div class="form-item">
-                            <label for="details">Details:</label>
+            </header>
+            <section>
+                <div class="container-box">
+                    <div class="box-contact">
+                        <h2>Contact formulary</h2>
+                        <form action="#" method="get">
+                            <div class="form-item">
+                                <label for="name_surname">Full name:</label>
+                                <input type="text" id="name_surname" name="name_surname" placeholder="Write your full name." required>
+                            </div>
+                            <div class="form-item">
+                                <label for="reason">Reason for consultation:</label>
+                                <select id="reason" name="reason" required>
+                                    <option value="">Choose an option</option>
+                                    <option value="bike">Bike</option>
+                                    <option value="product">Product</option>
+                                    <option value="business">Proposal Business</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label for="details">Details:</label>
+                                <br>
+                                <textarea id="details" name="details" rows="10" cols="41" maxlength="200" placeholder="Explain your reason for contacting us." required></textarea>
+                            </div>
                             <br>
-                            <textarea id="details" name="details" rows="10" cols="41" maxlength="200" placeholder="Explain your reason for contacting us." required></textarea>
-                        </div>
-                        <br>
-                        <div class="form-item-button">
-                            <input type="submit" class="button" value="Send">
-                            <input type="reset" class="button" value="Reset">
-                        </div>
-                    </form>
+                            <div class="form-item-button">
+                                <input type="submit" class="button" value="Send">
+                                <input type="reset" class="button" value="Reset">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+                
+            <footer>
+                <div class="container-footer">
+                    <p id="copyright">Copyright &#169; 2022</p>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

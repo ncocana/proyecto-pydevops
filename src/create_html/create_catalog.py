@@ -36,22 +36,23 @@ def create_catalog():
             <base target="_self">
         </head>
         <body id="background-catalog">
-            <header>
-                <div class="container-header">
-                    <div class="container-header-logo">
-                        <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+            <div class="index-footer">
+                <header>
+                    <div class="container-header">
+                        <div class="container-header-logo">
+                            <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+                        </div>
+                        <nav class="nav-menu">
+                            <a href="./index.html">Inicio</a>
+                            <a href="./catalog.html">Catalog</a>
+                            <a href="./shops.html">Shops</a>
+                            <a href="./contact.html">Contact</a>
+                            <a href="">Products</a>
+                        </nav>
                     </div>
-                    <nav class="nav-menu">
-                        <a href="./index.html">Inicio</a>
-                        <a href="./catalog.html">Catalog</a>
-                        <a href="./shops.html">Shops</a>
-                        <a href="./contact.html">Contact</a>
-                        <a href="">Products</a>
-                    </nav>
-                </div>
-            </header>
-            <section>
-                <div class="container-box">
+                </header>
+                <section>
+                    <div class="container-box">
                 '''
 
     #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
@@ -105,50 +106,56 @@ def create_catalog():
         #This will add the following html code to the variable 'html', creating a box in catalog.html with the bike's information.
         #Because is in a for loop, it will create a box for each bike.
         html += f'''<div class="box-catalog">
-                            <div>
-                            <i class="fa fa-bicycle"></i>
-                            <h3>{typeBike.title()}</h3>
+                                <div>
+                                <i class="fa fa-bicycle"></i>
+                                <h3>{typeBike.title()}</h3>
 
-                            <ul class="container-list">
-                                <li class="container-list-item"><h4>Characteristics</h4></li>
-                                <li class="container-list-item"><b>Mark:</b> {markBike}</li>
-                                <li class="container-list-item"><b>Minim age:</b> {minAge}</li>
-                                <li class="container-list-item"><b>For kids?</b> {isForKids}</li>
-                                <li class="container-list-item"><b>People capacity:</b> {capacitykBike}</li>
-                                <li class="container-list-item"><b>Number of speeds:</b> {speedsBike}</li>
-                                <li class="container-list-item"><b>Colors avalaibles:</b> {colorsBike.title()}</li>
-                                <li class="container-list-item"><b>Accessories:</b> {accessoriesBike.title()}</li>
-                                <li class="container-list-item"><b>Is it electric?:</b> {isEBike}</li>
-                                '''
+                                <ul class="container-list">
+                                    <li class="container-list-item"><h4>Characteristics</h4></li>
+                                    <li class="container-list-item"><b>Mark:</b> {markBike}</li>
+                                    <li class="container-list-item"><b>Minim age:</b> {minAge}</li>
+                                    <li class="container-list-item"><b>For kids?</b> {isForKids}</li>
+                                    <li class="container-list-item"><b>People capacity:</b> {capacitykBike}</li>
+                                    <li class="container-list-item"><b>Number of speeds:</b> {speedsBike}</li>
+                                    <li class="container-list-item"><b>Colors avalaibles:</b> {colorsBike.title()}</li>
+                                    <li class="container-list-item"><b>Accessories:</b> {accessoriesBike.title()}</li>
+                                    <li class="container-list-item"><b>Is it electric?:</b> {isEBike}</li>
+                                    '''
 
         #If it an electric bike, it will add the next information. Otherwise, it will not.
         if isEBike == 'Yes':
             html += f'''<li class="container-list-item"><h4>eBike's characteristics</h4></li>
-                                <li class="container-list-item"><b>Speed:</b> {speedEBike}</li>
-                                <li class="container-list-item"><b>Battery duration/km:</b> {batteryEBike}</li>
-                                <li class="container-list-item"><b>Battery's material:</b> {materialBatteryEBike.title()}</li>
-                                '''
+                                    <li class="container-list-item"><b>Speed:</b> {speedEBike}</li>
+                                    <li class="container-list-item"><b>Battery duration/km:</b> {batteryEBike}</li>
+                                    <li class="container-list-item"><b>Battery's material:</b> {materialBatteryEBike.title()}</li>
+                                    '''
 
         html += f'''<li class="container-list-item"><h4>Maker's information</h4></li>
-                                <li class="container-list-item"><b>Size of squares:</b> {squaresSizeBike}</li>
-                                <li class="container-list-item"><b>Bike's material:</b> {materialBike.title()}</li>
-                                <li class="container-list-item"><b>Development:</b> {developmentBike}</li>
-                                <li class="container-list-item"><b>Maker:</b> {makerBike.title()}</li>
-                                <li class="container-list-item"><h4>Avalaibility</h4></li>
-                                <li class="container-list-item"><b>Is it available?:</b> {avalaibilityBike}</li>
-                                <li class="container-list-item"><b>Stock in shop:</b> {stockShop}</li>
-                                <li class="container-list-item"><h4>Prices</h4></li>
-                                <li class="container-list-item"><b>Rent price:</b> {priceRentBike}</li>
-                                <li class="container-list-item"><b>Broke price:</b> {priceBrokeBike}</li>
-                            </ul>
-                            </div>
+                                    <li class="container-list-item"><b>Size of squares:</b> {squaresSizeBike}</li>
+                                    <li class="container-list-item"><b>Bike's material:</b> {materialBike.title()}</li>
+                                    <li class="container-list-item"><b>Development:</b> {developmentBike}</li>
+                                    <li class="container-list-item"><b>Maker:</b> {makerBike.title()}</li>
+                                    <li class="container-list-item"><h4>Avalaibility</h4></li>
+                                    <li class="container-list-item"><b>Is it available?:</b> {avalaibilityBike}</li>
+                                    <li class="container-list-item"><b>Stock in shop:</b> {stockShop}</li>
+                                    <li class="container-list-item"><h4>Prices</h4></li>
+                                    <li class="container-list-item"><b>Rent price:</b> {priceRentBike}</li>
+                                    <li class="container-list-item"><b>Broke price:</b> {priceBrokeBike}</li>
+                                </ul>
+                                </div>
 
-                            <div class="box-catalog-button"><a href="./booking.html" class="container-list-button">Book Now!</a></div>
-                        </div>
-                    '''
+                                <div class="box-catalog-button"><a href="./booking.html" class="container-list-button">Book Now!</a></div>
+                            </div>
+                        '''
 
     html += '''</div>
-            </section>
+                </section>
+                <footer>
+                    <div class="container-footer">
+                        <p id="copyright">Copyright &#169; 2022</p>
+                    </div>
+                </footer>
+            </div>
         </body>
     </html>'''
 
