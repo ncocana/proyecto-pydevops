@@ -91,7 +91,13 @@ def create_catalog():
 
         accessoriesBike = ', '.join(str(accessory) for accessory in document['characteristics']['acessories'])
 
+        #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
         avalaibilityBike = document['avalaibility']
+        if avalaibilityBike is True:
+            avalaibilityBike = 'Yes'
+        if avalaibilityBike is False:
+            avalaibilityBike = 'No'
+
         stockShop = document['units_in_shop']
         priceRentBike = document['price_of_rent_per_hour']
         priceBrokeBike = document['price_of_broke']
@@ -137,7 +143,7 @@ def create_catalog():
                             </ul>
                             </div>
 
-                            <div class="box-catalog-button"><a href="#" class="container-list-button">Book Now!</a></div>
+                            <div class="box-catalog-button"><a href="./booking.html" class="container-list-button">Book Now!</a></div>
                         </div>
                     '''
 
