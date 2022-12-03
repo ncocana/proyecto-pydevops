@@ -60,7 +60,7 @@ label {
     background-color: rgb(200, 200, 200);
 }  
 
-/* iPhone SE*/
+/* iPhone SE: 377 x 667 */
 @media screen and ((min-width: 375px) and (max-width: 667px)){
     .form-item {
         padding: 0.2em;
