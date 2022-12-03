@@ -42,15 +42,12 @@
     text-align: center;
     padding: 0.2em;
     padding-left: 14%;
+    width: 99%;
+    border-collapse: collapse;
 }
 
 th, td {
     border: 1px solid;
-    border-collapse: collapse;
-}
-
-table {
-    width: 99%;
     border-collapse: collapse;
 }
 
@@ -90,7 +87,7 @@ label {
     background-color: rgb(200, 200, 200);
 }  
 
-/* iPhone SE: 377x667 */
+/* iPhone SE: 377 x 667 */
 @media screen and ((min-width: 375px) and (max-width: 667px)){
     .form-item {
         padding: 0.2em;
@@ -99,5 +96,14 @@ label {
     .form-item-button {
         padding-bottom: 20px;
         padding-left: 32%;
+    }
+
+    .container-box .box-booking {
+        max-width: 100%;
+        overflow: auto
+    }
+
+    .booking-form th {
+        padding: 10px;
     }
 }
