@@ -1,15 +1,13 @@
 import requests
 import json
 
-def count_type_bikes_sorted():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
+def get_all_data_from_bikes():
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
-        "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
-                    { "$sort": { "count": 1 } }]
+        "dataSource": "Sandbox"
     })
 
     headers = {
@@ -27,9 +25,17 @@ def count_type_bikes_sorted():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for document in count_type_bikes_sorted()['documents']:
+    for document in get_all_data_from_bikes()['documents']:
         try:
-            print(document['_id'], '-', document['count'])
+            print(document['type'], '-', document['mark'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             continue
+
+    #Tests if it gets KeyError outside a "for in".
+    try:
+        print(get_all_data_from_bikes()['documents'][0]['type'])
+    except KeyError:
+        print("This field is not present on the document's collection. Try another document or field.")
+        pass
+        

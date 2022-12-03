@@ -1,14 +1,14 @@
 import requests
 import json
 
-def count_type_bikes_sorted():
+def count_bikes_by_capacity():
     url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
         "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
+        "pipeline": [{"$group": {"_id": "$characteristics.bike_capacity", "count": {"$sum":1}}},
                     { "$sort": { "count": 1 } }]
     })
 
@@ -27,9 +27,9 @@ def count_type_bikes_sorted():
 if __name__ == "__main__":
 
     #Tests if it gets KeyError or not inside a "for in".
-    for document in count_type_bikes_sorted()['documents']:
+    for document in count_bikes_by_capacity()['documents']:
         try:
-            print(document['_id'], '-', document['count'])
+            print('Capacity for', document['_id'], 'people -', document['count'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             continue
