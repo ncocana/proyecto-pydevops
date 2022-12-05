@@ -1,0 +1,43 @@
+/* STYLES EXCLUSIVES OF INDEX.HTML */
+
+#background-index {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background-index.jpg);
+    background-repeat: no-repeat;
+    background-position:;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#title-index {
+    margin-top: 250px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 20px;
+    text-shadow : 3px 3px 10px rgba(255, 255, 255, 0.453);
+}
+
+#p-index {
+    margin-bottom: 40px;
+    font-size: 25px;
+    color: blue;
+    padding: 0 150px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow : 3px 3px 10px white;
+}
+
+footer .bottom #pcopy{
+    padding-right: 10px;
+    text-align: center;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow : 3px 3px 20px rgba(255, 255, 255, 0.74);
+    margin-top: 350px;
+}

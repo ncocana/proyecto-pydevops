@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+import webbrowser
+
+f = open('conversion.html','w')
+
+tags = """<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,45 +14,39 @@
     <meta name="keywords" content="rent, accesories, shops, bikes, bicycles, type of bicycle">
     <meta http-equiv="content-language" content="text_EN">
     <link rel="stylesheet" href="main.css">
-    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="icon.png">
-
+    <link rel="icon" type="image/png" href="/imágenes/icon.png C:\\Users\\samu9\\Documents\\proyectoPRG">
 </head>
 <body>
     <div class="head">  
         <div class="logo">
-            <a href="first.html" target="_self"><img src="rb.png" height="65px" width="90px" alt="rental logo"></a>   
+            <img src="rb.png" height="65px" width="90px" alt="rental logo">  
         </div>
         <nav class="navbar">
             <a href="index.html">Inicio</a>
-            <a href="catalog.html">Catalog</a>
+            <a href="catalog.html" target="_self">Catalog</a>
             <a href="">Shops</a>
             <a href="">Contact</a>
             <a href="">Products</a>
         </nav>
     </div>
 
-    <div class="box-container">
-            <div class="box">
-                <i class="fa fa-bicycle"></i>
-                <h3>MTB</h3>
-            </div>
-        
-        <div class="box">
-            <i class="fa fa-bicycle"></i>
-            <h3>Road bike</h3>
-        </div>
+    <div>
+        <h2 class="title" id="title1">Rental Bikes </h2>
+        <p id="pg"><i><b>the bikes never goes out of style</b></i></p>
 
-        <div class="box">
-            <i class="fa fa-bicycle"></i>
-            <h3>E-Bike</h3>
-        </div>
-             
-        <div class="box">
-            <i class="fa fa-bicycle"></i>
-            <h3>Bike kids</h3>
-        </div>
     </div>
 
-</body>
-</html>
+    <div>     
+            <input id="submit" value="" type="submit">
+            <label for="submit" class="submit"></label>
+            <input type="search" name="Search" id="search" placeholder="Search">
+    </div>
+    </body>
+</html>"""
+
+f.write(tags)
+f.close()
+
+
+webbrowser.open_new_tab('conversion.html')
