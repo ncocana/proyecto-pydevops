@@ -15,7 +15,7 @@ def count_bikes_by_mark():
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': 'Z7t903XSzDIf0i7ZihPH1neAng5qGsWBKGYpKjB4gzlDwdwbbq7KtAoeG92y1VF5', 
+    'api-key': '6NFpzs43ERy96QMn8io03GXFuUPteyDRDb0cMzBLIe2ya0TOLsu9CzhtMx24hhAZ', 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

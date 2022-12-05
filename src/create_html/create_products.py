@@ -43,8 +43,8 @@ def create_products():
                         <a href="./index.html">Inicio</a>
                         <a href="./catalog.html">Catalog</a>
                         <a href="./shops.html">Shops</a>
-                        <a href="">Contact</a>
-                        <a href="./products1.html">Products</a>
+                        <a href="./contact.html">Contact</a>
+                        <a href="./products.html">Products</a>
                     </nav>
                 </div>
             </header>

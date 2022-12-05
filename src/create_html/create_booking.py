@@ -43,7 +43,7 @@ def create_booking():
                         <a href="./catalog.html">Catalog</a>
                         <a href="./shops.html">Shops</a>
                         <a href="./contact.html">Contact</a>
-                        <a href="">Products</a>
+                        <a href="./products.html">Products</a>
                     </nav>
                 </div>
             </header>
