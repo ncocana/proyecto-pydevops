@@ -135,8 +135,8 @@ def create_catalog():
                                     <li class="container-list-item"><b>Is it available?:</b> {avalaibilityBike}</li>
                                     <li class="container-list-item"><b>Stock in shop:</b> {stockShop}</li>
                                     <li class="container-list-item"><h4>Prices</h4></li>
-                                    <li class="container-list-item"><b>Rent price:</b> {priceRentBike}</li>
-                                    <li class="container-list-item"><b>Broke price:</b> {priceBrokeBike}</li>
+                                    <li class="container-list-item"><b>Rent price:</b> {priceRentBike}€</li>
+                                    <li class="container-list-item"><b>Broke price:</b> {priceBrokeBike}€</li>
                                 </ul>
                                 </div>
 
