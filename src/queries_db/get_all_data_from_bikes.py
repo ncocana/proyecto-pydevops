@@ -2,13 +2,12 @@ import requests
 import json
 
 def get_all_data_from_bikes():
-    url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/find"
-    
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
-        "dataSource": "SANDBOXX"
+        "dataSource": "Sandbox"
     })
 
     headers = {
