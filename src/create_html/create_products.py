@@ -1,7 +1,8 @@
 from pathlib import Path
+from sys import path as systemPath
 from os import getcwd as getCurrentDirectory
+systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_accessories import get_all_data_from_accessories
-
 
 def create_products():
     
