@@ -1,7 +1,8 @@
 from pathlib import Path
+from sys import path as systemPath
 from os import getcwd as getCurrentDirectory
+systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_accessories import get_all_data_from_accessories
-
 
 def create_products():
     
@@ -125,9 +126,6 @@ def create_products():
                     '''
             html += f'''
                             </div>
-                        <div>
-                        <img src="./img/maillot.jpg" alt="article image" width="150px" height="150px"/>
-                        </div>
                         </div>
                     </div>
                 </div>
