@@ -33,23 +33,24 @@ def create_products():
             <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
             <base target="_self">
         </head>
-        <body id="background-shops">
-            <header>
-                <div class="container-header">
-                    <div class="container-header-logo">
-                        <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+        <body id="background-products">
+            <div class="index-footer">
+                <header>
+                    <div class="container-header">
+                        <div class="container-header-logo">
+                            <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+                        </div>
+                        <nav class="nav-menu">
+                            <a href="./index.html">Inicio</a>
+                            <a href="./catalog.html">Catalog</a>
+                            <a href="./shops.html">Shops</a>
+                            <a href="./contact.html">Contact</a>
+                            <a href="./products.html">Products</a>
+                        </nav>
                     </div>
-                    <nav class="nav-menu">
-                        <a href="./index.html">Inicio</a>
-                        <a href="./catalog.html">Catalog</a>
-                        <a href="./shops.html">Shops</a>
-                        <a href="./contact.html">Contact</a>
-                        <a href="./products.html">Products</a>
-                    </nav>
-                </div>
-            </header>
-            <section>
-            """
+                </header>
+                <section>
+                """
             
     for document in get_all_data_from_accessories()['documents']:
 
@@ -81,65 +82,63 @@ def create_products():
         
         
         
-        html += f'''
-                <div class="container-box-products">
-                    <div class="box-products">
-                        <i class="fa fa-shopping-bag" id="icon-products"></i>
-                        <h2 id="h2-products">{mark}</h2>
-                        <div class="box-products-information">
-                            <div class="box-products-information-items">
-                                <h2 id="h2-products2">{name}</h2>
-            '''
+        html += f'''<div class="container-box-products">
+                        <div class="box-products">
+                            <i class="fa fa-shopping-bag" id="icon-products"></i>
+                            <h2 id="h2-products">{mark}</h2>
+                            <div class="box-products-information">
+                                <div class="box-products-information-items">
+                                    <h2 id="h2-products2">{name}</h2>
+                                    '''
+        
         if features != None:
             
-            html += f'''
-                                <p id="products"><b>Features</b>: {features}</p>
+            html += f'''<p id="products"><b>Features</b>: {features}</p>
+                        '''
         
-                '''
         if material != None:
             
-            html += f'''
-                                <p id="products"><b>Material</b>: {material}</p>
-                '''
+            html += f'''<p id="products"><b>Material</b>: {material}</p>
+                        '''
+        
         if  color != None:
             
-            html += f'''
-                                <p id="products"><b>Available colors</b>: {color}</p>
-                '''
+            html += f'''<p id="products"><b>Available colors</b>: {color}</p>
+                        '''
+
         if  size != None:
             
-            html += f'''
-                                <p id="products"><b>Size</b>: {size}</p>
-                '''
+            html += f'''<p id="products"><b>Size</b>: {size}</p>
+                        '''
+
         if discount == False or discount != False:
 
             discount = 'Until the end of units'
 
-            html += f'''
+            html += f'''</div>
+                        <div class="box-products-information-items">
+                            <h2 id="h2-products2">Price</h2>
+                            '''
+            html += f'''<p id=products><b>Current price</b>: {price} €</p>
+                            <p id=products><b>Stock</b>: {stock}</p>
+                            <p id=products><b>Limited offer</b>: {discount}</p>
+                            '''
+            html += f'''</div>
+                            <div>
                             </div>
-                            <div class="box-products-information-items">
-                                <h2 id="h2-products2">Price</h2>'''
-            html += f'''
-                                <p id=products><b>Current price</b>: {price} €</p>
-                                <p id=products><b>Stock</b>: {stock}</p>
-                                <p id=products><b>Limited offer</b>: {discount}</p>
-                    '''
-            html += f'''
                             </div>
-                        <div>
-                        </div>
                         </div>
                     </div>
-                </div>
-                '''
+                    '''
     
     html += '''</section>
-            <footer>
-                <div class="container-footer">
-                    <p id="copyright">Copyright &#169; 2022</p>
-                </div>
-            </footer>
-    </body>
+                <footer>
+                    <div class="container-footer">
+                        <p id="copyright">Copyright &#169; 2022</p>
+                    </div>
+                </footer>
+            </div>
+        </body>
     </html>'''
 
     file.write(html)

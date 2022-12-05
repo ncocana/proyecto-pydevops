@@ -35,24 +35,27 @@ def create_shops():
             <base target="_self">
         </head>
         <body id="background-shops">
-            <header>
-                <div class="container-header">
-                    <div class="container-header-logo">
-                        <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+            <div class="index-footer">
+                <header>
+                    <div class="container-header">
+                        <div class="container-header-logo">
+                            <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
+                        </div>
+                        <nav class="nav-menu">
+                            <a href="./index.html">Inicio</a>
+                            <a href="./catalog.html">Catalog</a>
+                            <a href="./shops.html">Shops</a>
+                            <a href="./contact.html">Contact</a>
+                            <a href="./products.html">Products</a>
+                        </nav>
                     </div>
-                    <nav class="nav-menu">
-                        <a href="./index.html">Inicio</a>
-                        <a href="./catalog.html">Catalog</a>
-                        <a href="./shops.html">Shops</a>
-                        <a href="./contact.html">Contact</a>
-                        <a href="./products.html">Products</a>
-                    </nav>
-                </div>
-            </header>
-            <section>
-            """
+                </header>
+                <section>
+                <div class="container-box">
+                """
             
     for document in get_all_data_from_companies()['documents']:
+
         name = document['name']
         street = document['address']['street_address']
         zip_code = document['address']['zip_code']
@@ -62,40 +65,39 @@ def create_shops():
         country_code = document['address']['country_code']
         email = document['contact']['email_address']
         phone_number = document['contact']['phone_number']
+        google_map = document['address']['google_map']
         
         
-        html += f'''  
-        <div class="container-box">
-                <div class="box-shops">
-                    <i class="fa fa-map-marker" id="icon-shop"></i>
-                    <h2 id="h2-shops">{name}</h2>
-                    <div class="box-shops-information">
-                        <div class="box-shops-information-items">
-                            <h2 id="h2-shops2">Address</h2>
-                            <p id="companies">{district}, {street}, {zip_code},<br>{city}, {autonomous_community},   {country_code}</p>
-                    </div>
-                        <div class="box-shops-information-items">
-                            <h2 id="h2-shops2">Contact information</h2>
-                            <p id=companies><b>Email:</b> {email}<br><b>Tel:</b> {phone_number}</p>
+        html += f'''<div class="box-shops">
+                        <i class="fa fa-map-marker" id="icon-shop"></i>
+                        <h2>{name}</h2>
+                        <div class="box-shops-information">
+                            <div class="box-shops-information-items">
+                                <h3>Address</h3>
+                                <p>{district}, {street}, {zip_code}</p>
+                                <p>{city}, {autonomous_community}, {country_code}</p>
+                            </div>
+                            <div class="box-shops-information-items">
+                                <h3>Contact information</h3>
+                                <p><b>Email:</b> {email}</p>
+                                <p><b>Tel:</b> {phone_number}</p>
+                            </div>
                         </div>
-                </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3076.3770556218747!2d2.6196049154
-                    35978!3d39.551104879475176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129792087cbe5111%3A0x
-                    fdcc0346ad407921!2sAv.%20de%20Gabriel%20Roca%2C%2054%2C%2007015%20Palma%2C%20Illes%20Balears!5e0!3m2!
-                    1sca!2ses!4v1670079910320!5m2!1sca!2ses" width="450" height="300" style="border:0;
-                    padding: 20px; border-radius: 10%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-whe
-                    n-downgrade"></iframe>
-                </div>
-             </div>'''
+                        <iframe src="{google_map}" class="google-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-whe
+                        n-downgrade"></iframe>
+                    </div>
+                    '''
              
     
-    html += '''</section>
-            <footer>
-                <div class="container-footer">
-                    <p id="copyright">Copyright &#169; 2022</p>
-                </div>
-            </footer>
-    </body>
+    html += '''</div>
+                </section>
+                <footer>
+                    <div class="container-footer">
+                        <p id="copyright">Copyright &#169; 2022</p>
+                    </div>
+                </footer>
+            </div>
+        </body>
     </html>'''
 
     file.write(html)
