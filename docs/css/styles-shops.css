@@ -1,4 +1,4 @@
-/* STYLES EXCLUSIVES OF PRODUCTS.HTML */
+/* STYLES EXCLUSIVES OF SHOPS.HTML */
 
 #background-shops {
     width: 100%;
@@ -14,7 +14,7 @@
     width: 95%;
     background-image: url(../img/gif.gif);
     background-position: bottom;
-    background-repeat:repeat-x;
+    background-repeat: repeat-x;
     background-size: 500px;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
@@ -22,12 +22,6 @@
     text-transform: uppercase;
     background-color: white;
     text-align: center;
-}
-
-.container-box .box-shops h2 {
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    margin-bottom: 15px;
 }
 
 #icon-shop {
@@ -42,6 +36,14 @@
     margin: 10px 0;
 }
 
+.container-box .box-shops h2 {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    font-weight: bolder;
+    text-decoration: overline;
+}
+
 .box-shops-information {
     display: flex;
     justify-content: space-evenly;
@@ -54,30 +56,47 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 20px;
 }
 
-footer .bottom #pcopy1{
-    padding-left: 35px;
+.box-shops-information-items h3 {
     text-align: left;
-    color:black;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: capitalize;
-    text-shadow : 3px 3px 20px rgba(255, 255, 255, 0.74);
-    margin-top: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-bottom: 15px;
 }
-#companies{
+
+.box-shops-information-items p {
     text-align: justify;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: none;
 }
 
-#h2-shops2{
-    text-align: left;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+.google-map {
+    width: 450px;
+    height: 300px;
+    border: 0;
+    padding: 20px;
+    border-radius: 10%;
 }
 
-#h2-shops{
-    font-weight:bolder;
-    text-decoration:overline;
+/* iPhone SE: 377 x 667 */
+@media screen and ((min-width: 375px) and (max-width: 667px)) {
+
+    .box-shops-information {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .google-map {
+        width: 316px;
+        height: 300px;
+        border: 0;
+        padding: 20px;
+        border-radius: 10%;
+    }
 }
