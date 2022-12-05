@@ -1,35 +1,30 @@
 /* STYLES EXCLUSIVES OF PRODUCTS.HTML */
 
-#background-shops {
+#background-products {
     width: 100%;
     height: 100vh;
-    background-image: url(../img/background-shops.jpg);
+    background-image: url(../img/background-products.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-.container-box .box-shops {
+.container-box-products .box-products {
     height: auto;
-    width: 95%;
-    background-image: url(../img/gif.gif);
-    background-position: bottom;
-    background-repeat:repeat-x;
-    background-size: 500px;
+    width: auto;
     border-radius: 20px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
     margin: 20px;
-    text-transform: uppercase;
     background-color: white;
+    text-align: center;
 }
 
-.container-box .box-shops h2 {
+.container-box-products .box-products h2 {
     font-size: 20px;
     color: rgb(0, 0, 0);
     margin-bottom: 15px;
 }
 
-#icon-shop {
+#icon-products {
     height: 50px;
     width: 50px;
     line-height: 50px;
@@ -41,42 +36,58 @@
     margin: 10px 0;
 }
 
-.box-shops-information {
+.box-products-information {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     flex-wrap: wrap;
-    text-align: center;
     padding: 30px;
 }
 
-.box-shops-information .box-shops-information-items {
+.box-products-information .box-products-information-items {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
 }
 
-footer .bottom #pcopy1{
+footer .bottom #pcopy2{
     padding-left: 35px;
     text-align: left;
     color:black;
     font-size: 20px;
     font-weight: bold;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-shadow : 3px 3px 20px rgba(255, 255, 255, 0.74);
     margin-top: none;
 }
-#companies{
+#clothes{
     text-align: justify;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: none;
 }
 
-#h2-shops2{
+#h2-products2{
+    text-transform: capitalize;
+    font-weight: bold;
     text-align: left;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration:underline ;
 }
 
-#h2-shops{
+#h2-products{
+    text-transform: uppercase;
     font-weight:bolder;
     text-decoration:overline;
+}
+#products{
+    text-align: left;
+    text-transform: capitalize;
+}
+footer .bottom #pcopy1{
+    padding-left: 20px;
+    text-align: left;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: none;
 }

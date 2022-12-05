@@ -2,20 +2,20 @@ import requests
 import json
 
 def count_bikes_by_mark():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
+    url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/aggregate"
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
-        "dataSource": "Sandbox",
-        "pipeline": [{"$group": {"_id": "$mark", "count": {"$sum":1}}},
+        "dataSource": "SANDBOXX",
+        "pipeline": [{"$group": {"_id": "$type", "count": {"$sum":1}}},
                     { "$sort": { "count": 1 } }]
     })
 
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': '6NFpzs43ERy96QMn8io03GXFuUPteyDRDb0cMzBLIe2ya0TOLsu9CzhtMx24hhAZ', 
+    'api-key': 'Z7t903XSzDIf0i7ZihPH1neAng5qGsWBKGYpKjB4gzlDwdwbbq7KtAoeG92y1VF5', 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

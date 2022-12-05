@@ -2,18 +2,19 @@ import requests
 import json
 
 def get_all_data_from_bikes():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
+    url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/find"
+    
 
     payload = json.dumps({
         "collection": "bikes",
         "database": "rental_bikes",
-        "dataSource": "Sandbox"
+        "dataSource": "SANDBOXX"
     })
 
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': '6NFpzs43ERy96QMn8io03GXFuUPteyDRDb0cMzBLIe2ya0TOLsu9CzhtMx24hhAZ', 
+    'api-key': 'jNdMKZt2JmBwtYFJSwB8iRRx7M7OVqk0d1fPLuzaMDpLCkWOG7V5jgClzEYUKfV7', 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
