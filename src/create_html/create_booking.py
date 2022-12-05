@@ -1,7 +1,3 @@
-#To succesfuslly invoke the function 'get_all_data_from_bikes', as it is in another folder,
-#we need to specify its path with 'sys'. And then it is possible to call it.
-from sys import path as systemPath
-systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_bikes import get_all_data_from_bikes
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
@@ -96,8 +92,8 @@ def create_booking():
                                     <td>{markBike}</td>
                                     <td>{capacitykBike}</td>
                                     <td>{avalaibilityBike}</td>
-                                    <td>{priceRentBike}</td>
-                                    <td>{priceBrokeBike}</td>
+                                    <td>{priceRentBike}€</td>
+                                    <td>{priceBrokeBike}€</td>
                                 </tr>
                                 '''
 
