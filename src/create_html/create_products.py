@@ -13,8 +13,7 @@ def create_products():
     file = path.open('w', encoding="utf-8")
 
 
-    inicial = """
-    <!DOCTYPE html>
+    html = """<!DOCTYPE html>
     <html lang="en">
         <head>
             <title>Rental Bike - Products</title>
@@ -50,43 +49,38 @@ def create_products():
             </header>
             <section>
             """
-    end = '''
-    </section>
-            <footer>
-                <div class="bottom">
-                    <p id="pcopy1">Copyright &#169; 2022</p>
-                </div>
-            </footer>
-    </body>
-    </html>'''
             
-    menu = ''
     for document in get_all_data_from_accessories()['documents']:
+
         try:
             features = ', '.join(str(i) for i in document['description']['features'])
         except KeyError:
             features = None
+
         try:
             material = ', '.join(str(i) for i in document['description']['material'])
         except KeyError:
             material = None
+
         try:
             color = ', '.join(str(i) for i in document['description']['color'])
         except KeyError:
             color = None
+
         try:
             size = ', '.join(str(i) for i in document['description']['size'])
         except KeyError:
             size = None
+
         name = document['name']
         mark = document['mark']
         price = document['price']
-        offert = document['on_sale']
+        stock = document['on_sale']
         discount = document['discount']
         
         
         
-        menu += f'''
+        html += f'''
                 <div class="container-box-products">
                     <div class="box-products">
                         <i class="fa fa-shopping-bag" id="icon-products"></i>
@@ -97,48 +91,56 @@ def create_products():
             '''
         if features != None:
             
-            menu += f'''
+            html += f'''
                                 <p id="products"><b>Features</b>: {features}</p>
         
                 '''
         if material != None:
             
-            menu += f'''
+            html += f'''
                                 <p id="products"><b>Material</b>: {material}</p>
                 '''
         if  color != None:
             
-            menu += f'''
+            html += f'''
                                 <p id="products"><b>Available colors</b>: {color}</p>
                 '''
         if  size != None:
             
-            menu += f'''
+            html += f'''
                                 <p id="products"><b>Size</b>: {size}</p>
                 '''
         if discount == False or discount != False:
+
             discount = 'Until the end of units'
 
-            menu += f'''
+            html += f'''
                             </div>
                             <div class="box-products-information-items">
                                 <h2 id="h2-products2">Price</h2>'''
-            menu += f''''
+            html += f''''
                                 <p id=products><b>Current price</b>: {price} €</p>
-                                <p id=products><b>Offert</b>: {offert} €</p>
+                                <p id=products><b>Stock</b>: {stock} €</p>
                                 <p id=products><b>Limited offer</b>: {discount}</p>
                     '''
-            menu += f'''
+            html += f'''
                             </div>
                         <div>
-                        <img src="../webpage/img/maillot.jpg" alt="article image" width="150px" height="150px"/>
+                        <img src="./img/maillot.jpg" alt="article image" width="150px" height="150px"/>
                         </div>
                         </div>
                     </div>
                 </div>
                 '''
+    
+    html += '''</section>
+            <footer>
+                <div class="bottom">
+                    <p id="pcopy1">Copyright &#169; 2022</p>
+                </div>
+            </footer>
+    </body>
+    </html>'''
 
-    f.write(inicial)
-    f.write(menu)
-    f.write(end)
-    f.close()
+    file.write(html)
+    file.close()
