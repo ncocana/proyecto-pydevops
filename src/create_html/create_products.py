@@ -20,7 +20,7 @@ def create_products():
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="author" content="Samuel_Piedra and Noa_Coca�a">
+            <meta name="author" content="Samuel_Piedra and Noa_Cocaña">
             <meta name="description" content="rent bicycle page">
             <meta name="copyright" content="Samu&Noa">
             <meta name="generator" content="VisualStudioCode">
@@ -118,15 +118,14 @@ def create_products():
                             </div>
                             <div class="box-products-information-items">
                                 <h2 id="h2-products2">Price</h2>'''
-            html += f''''
+            html += f'''
                                 <p id=products><b>Current price</b>: {price} €</p>
-                                <p id=products><b>Stock</b>: {stock} €</p>
+                                <p id=products><b>Stock</b>: {stock}</p>
                                 <p id=products><b>Limited offer</b>: {discount}</p>
                     '''
             html += f'''
                             </div>
                         <div>
-                        <img src="./img/maillot.jpg" alt="article image" width="150px" height="150px"/>
                         </div>
                         </div>
                     </div>
@@ -135,8 +134,8 @@ def create_products():
     
     html += '''</section>
             <footer>
-                <div class="bottom">
-                    <p id="pcopy1">Copyright &#169; 2022</p>
+                <div class="container-footer">
+                    <p id="copyright">Copyright &#169; 2022</p>
                 </div>
             </footer>
     </body>
