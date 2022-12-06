@@ -52,18 +52,19 @@ def create_buy_product():
                     <div class="box-buying">
                         <h2>Buy a product</h2>
                         <h3>List of products</h3>
-                        <table class="buying-table">
-                            <tbody>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Mark</th>
-                                    <th>Sizes</th>
-                                    <th>Colors</th>
-                                    <th>Price</th>
-                                    <th>Discount</th>
-                                </tr>
-                                '''
+                        <div class="block-table">
+                            <table class="buying-table">
+                                <tbody>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Mark</th>
+                                        <th>Sizes</th>
+                                        <th>Colors</th>
+                                        <th>Price</th>
+                                        <th>Discount</th>
+                                    </tr>
+                                    '''
     #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
     for document in get_all_data_from_accessories()['documents']:
 
@@ -93,18 +94,19 @@ def create_buy_product():
         #with the specified bike's information.
         #Because is in a for loop, it will create a row for each bike.
         html += f'''<tr>
-                                    <td>{idProduct}</td>
-                                    <td>{nameProduct.title()}</td>
-                                    <td>{markProduct.title()}</td>
-                                    <td>{sizeProduct}</td>
-                                    <td>{colorProduct.title()}</td>
-                                    <td>{priceProduct}€</td>
-                                    <td>{discountProduct}</td>
-                                </tr>
-                                '''
+                                        <td>{idProduct}</td>
+                                        <td>{nameProduct.title()}</td>
+                                        <td>{markProduct.title()}</td>
+                                        <td>{sizeProduct}</td>
+                                        <td>{colorProduct.title()}</td>
+                                        <td>{priceProduct}€</td>
+                                        <td>{discountProduct}</td>
+                                    </tr>
+                                    '''
 
     html += '''</tbody>
-                        </table>
+                            </table>
+                        </div>
                         <h3>Buying formulary</h3>
                         <form action="#" method="get">
                             <div class="form-item">

@@ -98,7 +98,7 @@ label {
         padding-left: 32%;
     }
 
-    .container-box .box-booking {
+    .block-table {
         max-width: 100%;
         overflow: auto;
     }

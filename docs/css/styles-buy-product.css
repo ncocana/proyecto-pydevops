@@ -98,7 +98,7 @@ label {
         padding-left: 32%;
     }
 
-    .container-box .box-buying {
+    .block-table {
         max-width: 100%;
         overflow: auto;
     }

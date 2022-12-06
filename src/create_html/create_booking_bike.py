@@ -52,18 +52,19 @@ def create_booking_bike():
                     <div class="box-booking">
                         <h2>Book a bike</h2>
                         <h3>List of bikes</h3>
-                        <table class="booking-table">
-                            <tbody>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Type</th>
-                                    <th>Mark</th>
-                                    <th>Capacity</th>
-                                    <th>Availability</th>
-                                    <th>Rent price</th>
-                                    <th>Broke price</th>
-                                </tr>
-                                '''
+                        <div class="block-table">
+                            <table class="booking-table">
+                                <tbody>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Mark</th>
+                                        <th>Capacity</th>
+                                        <th>Availability</th>
+                                        <th>Rent price</th>
+                                        <th>Broke price</th>
+                                    </tr>
+                                    '''
     #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
     for document in get_all_data_from_bikes()['documents']:
 
@@ -87,18 +88,19 @@ def create_booking_bike():
         #with the specified bike's information.
         #Because is in a for loop, it will create a row for each bike.
         html += f'''<tr>
-                                    <td>{idBike}</td>
-                                    <td>{typeBike.title()}</td>
-                                    <td>{markBike}</td>
-                                    <td>{capacitykBike}</td>
-                                    <td>{avalaibilityBike}</td>
-                                    <td>{priceRentBike}€</td>
-                                    <td>{priceBrokeBike}€</td>
-                                </tr>
-                                '''
+                                        <td>{idBike}</td>
+                                        <td>{typeBike.title()}</td>
+                                        <td>{markBike}</td>
+                                        <td>{capacitykBike}</td>
+                                        <td>{avalaibilityBike}</td>
+                                        <td>{priceRentBike}€</td>
+                                        <td>{priceBrokeBike}€</td>
+                                    </tr>
+                                    '''
 
     html += '''</tbody>
-                        </table>
+                            </table>
+                        </div>
                         <h3>Booking formulary</h3>
                         <form action="#" method="get">
                             <div class="form-item">
