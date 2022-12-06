@@ -1,5 +1,3 @@
-from sys import path as systemPath
-systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_companies import get_all_data_from_companies
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
