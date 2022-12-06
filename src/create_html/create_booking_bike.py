@@ -2,11 +2,11 @@ from queries_db.get_all_data_from_bikes import get_all_data_from_bikes
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
-def create_booking():
+def create_booking_bike():
     
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/booking.html'.
+    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/booking-bike.html'.
     working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "booking.html"
+    path = working_directory / "docs" / "booking-bike.html"
 
     #Opens the file with the purpose to write on it.
     file = path.open('w', encoding="utf-8")
@@ -26,7 +26,7 @@ def create_booking():
         <meta name="keywords" content="rent, accesories, shops, bikes, bicycles, type of bicycle">
         <meta http-equiv="content-language" content="text_EN">
         <link rel="stylesheet" href="./css/styles-main.css">
-        <link rel="stylesheet" href="./css/styles-booking.css">
+        <link rel="stylesheet" href="./css/styles-booking-bike.css">
         <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
         <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
         <base target="_self">
@@ -52,7 +52,7 @@ def create_booking():
                     <div class="box-booking">
                         <h2>Book a bike</h2>
                         <h3>List of bikes</h3>
-                        <table class="booking-form">
+                        <table class="booking-table">
                             <tbody>
                                 <tr>
                                     <th>ID</th>
@@ -152,6 +152,6 @@ def create_booking():
 </html>
 '''
 
-    #Writes the content of the variable 'html' in the file created previously (booking.html), and then closes the file.
+    #Writes the content of the variable 'html' in the file created previously (booking-bike.html), and then closes the file.
     file.write(html)
     file.close()

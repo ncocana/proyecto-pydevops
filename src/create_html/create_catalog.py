@@ -140,7 +140,7 @@ def create_catalog():
                                 </ul>
                                 </div>
 
-                                <div class="box-catalog-button"><a href="./booking.html" class="container-list-button">Book Now!</a></div>
+                                <div class="box-catalog-button"><a href="./booking-bike.html" class="container-list-button">Book Now!</a></div>
                             </div>
                         '''
 
