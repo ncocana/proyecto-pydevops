@@ -50,7 +50,8 @@ def create_products():
                     </div>
                 </header>
                 <section>
-                """
+                    <div class="container-box-products">
+                        """
             
     for document in get_all_data_from_accessories()['documents']:
 
@@ -80,58 +81,58 @@ def create_products():
         stock = document['on_sale']
         discount = document['discount']
         
-        
-        
-        html += f'''<div class="container-box-products">
-                        <div class="box-products">
+        html += f'''<div class="box-products">
                             <i class="fa fa-shopping-bag" id="icon-products"></i>
-                            <h2 id="h2-products">{mark}</h2>
+                            <h2>{name}</h2>
                             <div class="box-products-information">
                                 <div class="box-products-information-items">
-                                    <h2 id="h2-products2">{name}</h2>
+                                    <h3>Characteristics</h3>
+                                    <p><b>Mark</b>: {mark}</p>
                                     '''
         
         if features != None:
             
-            html += f'''<p id="products"><b>Features</b>: {features}</p>
-                        '''
+            html += f'''<p><b>Features</b>: {features}</p>
+                                    '''
         
         if material != None:
             
-            html += f'''<p id="products"><b>Material</b>: {material}</p>
-                        '''
+            html += f'''<p><b>Material</b>: {material}</p>
+                                    '''
         
         if  color != None:
             
-            html += f'''<p id="products"><b>Available colors</b>: {color}</p>
-                        '''
+            html += f'''<p><b>Available colors</b>: {color}</p>
+                                    '''
 
         if  size != None:
             
-            html += f'''<p id="products"><b>Size</b>: {size}</p>
-                        '''
+            html += f'''<p><b>Available sizes</b>: {size}</p>
+                                '''
 
-        if discount == False or discount != False:
+        html += f'''</div>
+                                <div class="box-products-information-items">
+                                    <h3>Price</h3>
+                                    <p id=products><b>Price</b>: {price}€</p>
+                                    <p><b>Stock</b>: {stock}</p>
+                                    '''
 
-            discount = 'Until the end of units'
+        if discount is False:
+            html += f'''<p><b>Discount</b>: No discount at the moment</p>
+                                '''
+        else:
 
-            html += f'''</div>
-                        <div class="box-products-information-items">
-                            <h2 id="h2-products2">Price</h2>
-                            '''
-            html += f'''<p id=products><b>Current price</b>: {price} €</p>
-                            <p id=products><b>Stock</b>: {stock}</p>
-                            <p id=products><b>Limited offer</b>: {discount}</p>
-                            '''
-            html += f'''</div>
-                            <div>
+            html += f'''<p><b>Discount</b>: {discount}%</p>
+                                '''
+        
+        html += f'''</div>
                             </div>
-                            </div>
+                            <div class="box-products-button"><a href="./booking-product.html" class="container-button">Book Now!</a></div>
                         </div>
-                    </div>
-                    '''
+                        '''
     
-    html += '''</section>
+    html += '''</div>
+                </section>
                 <footer>
                     <div class="container-footer">
                         <p id="copyright">Copyright &#169; 2022</p>
