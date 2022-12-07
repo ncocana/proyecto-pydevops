@@ -24,15 +24,13 @@ def deleteDocs():
 
     result = json.loads(response.text)
     
-    value = list(result.values())
-    for item in value:
-        if item == 0:
-            print('The document has not been deleted.')
-            return False
+    if result['deletedCount'] == 0:
+        print('The document has not been deleted.')
+        return False
    
-        if item == 1:
-            print('The document has been deleted.')
-            return True
+    if result['deletedCount'] == 1:
+        print('The document has been deleted.')
+        return True
 
 
 if __name__ == "__main__":
