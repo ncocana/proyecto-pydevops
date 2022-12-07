@@ -26,11 +26,11 @@ def deleteDocs():
     
     if result['deletedCount'] == 0:
         print('The document has not been deleted.')
-        return False
    
     if result['deletedCount'] == 1:
         print('The document has been deleted.')
-        return True
+    
+    return result
 
 
 if __name__ == "__main__":

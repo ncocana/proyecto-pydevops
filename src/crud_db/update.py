@@ -32,14 +32,12 @@ def updateOne():
     result = json.loads(response.text)
     
     if result['modifiedCount'] == 1 and result['matchedCount'] == 1:
-
       print('The document has been updated.')
-      return True
 
     if result['matchedCount'] == 0 and result['modifiedCount'] == 0:
-
       print('There are no matches for this document.')
-      return False
+    
+    return result
 
 
 if __name__ == "__main__":
