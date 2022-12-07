@@ -2,9 +2,10 @@
 #we need to specify its path with 'sys'. And then it is possible to call it.
 from sys import path as systemPath
 systemPath.insert(0, './')
-from src.queries_db.get_bikes_by_characteristics import get_bikes_by_characteristics
+from src.crud_db.find.get_bikes_by_characteristics import get_bikes_by_characteristics
+import pytest
 
-
+@pytest.mark.test_characteristics
 def test_is_dict():
 
     #Assess if the value returned by the function 'get_bikes_by_characteristics' is a dictionary.

@@ -3,8 +3,9 @@
 from sys import path as systemPath
 systemPath.insert(0, './')
 from src.queries_db.get_all_data_from_areas import get_all_data_from_areas
+import pytest
 
-
+@pytest.mark.test_areas
 def test_is_dict():
 
     #Assess if the value returned by the function 'get_all_data_from_areas' is a dictionary.

@@ -3,8 +3,9 @@
 from sys import path as systemPath
 systemPath.insert(0, './')
 from src.queries_db.get_all_data_from_companies import get_all_data_from_companies
+import pytest
 
-
+@pytest.mark.test_companies
 def test_is_dict():
 
     #Assess if the value returned by the function 'get_all_data_from_companies' is a dictionary.

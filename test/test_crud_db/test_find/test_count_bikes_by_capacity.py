@@ -2,9 +2,10 @@
 #we need to specify its path with 'sys'. And then it is possible to call it.
 from sys import path as systemPath
 systemPath.insert(0, './')
-from src.queries_db.count_bikes_by_capacity import count_bikes_by_capacity
+from src.crud_db.find.count_bikes_by_capacity import count_bikes_by_capacity
+import pytest
 
-
+@pytest.mark.test_count_capacity
 def test_is_dict():
 
     #Assess if the value returned by the function 'count_bikes_by_capacity' is a dictionary.
