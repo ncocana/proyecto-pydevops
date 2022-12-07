@@ -1,0 +1,52 @@
+/* STYLES EXCLUSIVES OF INDEX.HTML */
+
+#background-index {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background-index.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.section-index {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+#title-index {
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 20px;
+    text-shadow : 3px 3px 10px rgba(255, 255, 255, 0.453);
+}
+
+#p-index {
+    margin-bottom: 40px;
+    font-size: 25px;
+    color: blue;
+    padding: 0 150px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow : 3px 3px 10px white;
+}
+
+video {
+    height: 300px;
+    width: 500px;
+    border-radius: 5%;
+    margin: 10px 0;
+}
+
+@media screen and (( max-width : 376px) and (max-height : 668px)){
+    video {
+        height: 250px;
+        width: 350px;
+        border-radius: 5%;
+        margin: 10px 0;
+    }
+}
