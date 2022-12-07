@@ -45,6 +45,7 @@
                                         <th>ID</th>
                                         <th>Type</th>
                                         <th>Mark</th>
+                                        <th>Is it electric?</th>
                                         <th>Capacity</th>
                                         <th>Availability</th>
                                         <th>Rent price</th>
@@ -54,6 +55,7 @@
                                         <td>635ea06daa31f1e3eb0aa325</td>
                                         <td>Tandem</td>
                                         <td>BTWIN</td>
+                                        <td>No</td>
                                         <td>2</td>
                                         <td>Yes</td>
                                         <td>15.00€</td>
@@ -63,6 +65,7 @@
                                         <td>635ea16eaa31f1e3eb0aa326</td>
                                         <td>Highway Bike</td>
                                         <td>BTWIN</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>No</td>
                                         <td>20.00€</td>
@@ -72,6 +75,7 @@
                                         <td>635ea348aa31f1e3eb0aa329</td>
                                         <td>Urban</td>
                                         <td>Ducati corse</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>Yes</td>
                                         <td>20.00€</td>
@@ -81,6 +85,7 @@
                                         <td>635ea465aa31f1e3eb0aa32a</td>
                                         <td>Tricycle</td>
                                         <td>B-Pro</td>
+                                        <td>No</td>
                                         <td>2</td>
                                         <td>Yes</td>
                                         <td>15.00€</td>
@@ -90,6 +95,7 @@
                                         <td>635ea51daa31f1e3eb0aa32b</td>
                                         <td>Folding</td>
                                         <td>B-Pro</td>
+                                        <td>Yes</td>
                                         <td>1</td>
                                         <td>Yes</td>
                                         <td>30.00€</td>
@@ -99,6 +105,7 @@
                                         <td>635ea6d5aa31f1e3eb0aa32c</td>
                                         <td>Urban</td>
                                         <td>B-Pro</td>
+                                        <td>Yes</td>
                                         <td>1</td>
                                         <td>Yes</td>
                                         <td>25.00€</td>
@@ -108,6 +115,7 @@
                                         <td>635ea7a5aa31f1e3eb0aa32d</td>
                                         <td>For Learners</td>
                                         <td>B-Pro</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>No</td>
                                         <td>12.00€</td>
@@ -117,6 +125,7 @@
                                         <td>635ea928aa31f1e3eb0aa32e</td>
                                         <td>Urban</td>
                                         <td>Ducati corse</td>
+                                        <td>Yes</td>
                                         <td>1</td>
                                         <td>Yes</td>
                                         <td>20.00€</td>
@@ -126,6 +135,7 @@
                                         <td>635ea9e4aa31f1e3eb0aa32f</td>
                                         <td>For Children</td>
                                         <td>Balance toys</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>No</td>
                                         <td>8.00€</td>
@@ -135,6 +145,7 @@
                                         <td>635eaaa3aa31f1e3eb0aa330</td>
                                         <td>Bike With Trailer</td>
                                         <td>BTWIN</td>
+                                        <td>No</td>
                                         <td>3</td>
                                         <td>Yes</td>
                                         <td>20.00€</td>
@@ -144,6 +155,7 @@
                                         <td>635eab59aa31f1e3eb0aa331</td>
                                         <td>Mountain Bike</td>
                                         <td>Ducati corse</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>Yes</td>
                                         <td>10.00€</td>
@@ -153,6 +165,7 @@
                                         <td>635eac57aa31f1e3eb0aa332</td>
                                         <td>Mountain Bike</td>
                                         <td>BTWIN</td>
+                                        <td>No</td>
                                         <td>1</td>
                                         <td>No</td>
                                         <td>15.00€</td>
@@ -175,18 +188,18 @@
                                 <label for="bike_id">Select a bike:</label>
                                 <select id="bike_id" name="bike_id" required>
                                     <option value="">Choose the bike's ID</option>
-                                    <option value="635ea06daa31f1e3eb0aa325">635ea06daa31f1e3eb0aa325</option>
-                                <option value="635ea16eaa31f1e3eb0aa326">635ea16eaa31f1e3eb0aa326</option>
-                                <option value="635ea348aa31f1e3eb0aa329">635ea348aa31f1e3eb0aa329</option>
-                                <option value="635ea465aa31f1e3eb0aa32a">635ea465aa31f1e3eb0aa32a</option>
-                                <option value="635ea51daa31f1e3eb0aa32b">635ea51daa31f1e3eb0aa32b</option>
-                                <option value="635ea6d5aa31f1e3eb0aa32c">635ea6d5aa31f1e3eb0aa32c</option>
-                                <option value="635ea7a5aa31f1e3eb0aa32d">635ea7a5aa31f1e3eb0aa32d</option>
-                                <option value="635ea928aa31f1e3eb0aa32e">635ea928aa31f1e3eb0aa32e</option>
-                                <option value="635ea9e4aa31f1e3eb0aa32f">635ea9e4aa31f1e3eb0aa32f</option>
-                                <option value="635eaaa3aa31f1e3eb0aa330">635eaaa3aa31f1e3eb0aa330</option>
-                                <option value="635eab59aa31f1e3eb0aa331">635eab59aa31f1e3eb0aa331</option>
-                                <option value="635eac57aa31f1e3eb0aa332">635eac57aa31f1e3eb0aa332</option>
+                                    <option value="635ea06daa31f1e3eb0aa325">635ea06daa31f1e3eb0aa325 - Tandem</option>
+                                <option value="635ea16eaa31f1e3eb0aa326">635ea16eaa31f1e3eb0aa326 - Highway Bike</option>
+                                <option value="635ea348aa31f1e3eb0aa329">635ea348aa31f1e3eb0aa329 - Urban</option>
+                                <option value="635ea465aa31f1e3eb0aa32a">635ea465aa31f1e3eb0aa32a - Tricycle</option>
+                                <option value="635ea51daa31f1e3eb0aa32b">635ea51daa31f1e3eb0aa32b - Folding</option>
+                                <option value="635ea6d5aa31f1e3eb0aa32c">635ea6d5aa31f1e3eb0aa32c - Urban</option>
+                                <option value="635ea7a5aa31f1e3eb0aa32d">635ea7a5aa31f1e3eb0aa32d - For Learners</option>
+                                <option value="635ea928aa31f1e3eb0aa32e">635ea928aa31f1e3eb0aa32e - Urban</option>
+                                <option value="635ea9e4aa31f1e3eb0aa32f">635ea9e4aa31f1e3eb0aa32f - For Children</option>
+                                <option value="635eaaa3aa31f1e3eb0aa330">635eaaa3aa31f1e3eb0aa330 - Bike With Trailer</option>
+                                <option value="635eab59aa31f1e3eb0aa331">635eab59aa31f1e3eb0aa331 - Mountain Bike</option>
+                                <option value="635eac57aa31f1e3eb0aa332">635eac57aa31f1e3eb0aa332 - Mountain Bike</option>
                                 </select>
                             </div>
                             <div class="form-item">

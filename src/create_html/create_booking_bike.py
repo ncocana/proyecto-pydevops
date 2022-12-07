@@ -59,6 +59,7 @@ def create_booking_bike():
                                         <th>ID</th>
                                         <th>Type</th>
                                         <th>Mark</th>
+                                        <th>Is it electric?</th>
                                         <th>Capacity</th>
                                         <th>Availability</th>
                                         <th>Rent price</th>
@@ -73,6 +74,13 @@ def create_booking_bike():
         typeBike = document['type']
         markBike = document['mark']
         capacitykBike = document['characteristics']['bike_capacity']
+
+        #If it is an electric bike, the variable value will change to 'Yes'. Else, it will change to 'No'.
+        isEBike = document['characteristics']['electric_bike?']
+        if isEBike is True:
+            isEBike = 'Yes'
+        if isEBike is False:
+            isEBike = 'No'
 
         #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
         avalaibilityBike = document['avalaibility']
@@ -91,6 +99,7 @@ def create_booking_bike():
                                         <td>{idBike}</td>
                                         <td>{typeBike.title()}</td>
                                         <td>{markBike}</td>
+                                        <td>{isEBike}</td>
                                         <td>{capacitykBike}</td>
                                         <td>{avalaibilityBike}</td>
                                         <td>{priceRentBike}€</td>
@@ -120,11 +129,12 @@ def create_booking_bike():
 
         #Saves each value in a variable.
         idBike = document['_id']
+        typeBike = document['type']
 
         #This will add the following html code to the variable 'html', creating a option to select in the form in booking.html
         #with the ID's bike.
         #Because is in a for loop, it will create a option to select for each bike.
-        html += f'''<option value="{idBike}">{idBike}</option>
+        html += f'''<option value="{idBike}">{idBike} - {typeBike.title()}</option>
                                 '''
 
     html += '''</select>
