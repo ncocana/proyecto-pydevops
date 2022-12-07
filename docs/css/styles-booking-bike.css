@@ -1,6 +1,6 @@
 /* STYLES EXCLUSIVES OF CONTACT.HTML */
 
-#background-contact {
+#background-booking {
     width: 100%;
     height: 100vh;
     background-image: url(../img/background-contact.jpg);
@@ -10,7 +10,7 @@
     background-size: cover;
 }
 
-.container-box .box-contact {
+.container-box .box-booking {
     height: auto;
     width: 95%;
     background: rgb(255, 255, 255);
@@ -20,12 +20,39 @@
     margin: 20px;
 }
 
-.container-box .box-contact h2 {
+.container-box .box-booking h2 {
     font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5px;
+    text-align: center;
+    padding: 15px;
+    text-transform: capitalize;
+}
+
+.container-box .box-booking h3 {
+    font-size: 18px;
     color: rgb(0, 0, 0);
     margin-bottom: 15px;
     text-align: center;
     padding: 15px;
+    text-transform: capitalize;
+}
+
+.booking-table {
+    text-align: center;
+    padding: 0.2em;
+    padding-left: 14%;
+    width: 99%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.booking-table td {
+    padding: 10px;
 }
 
 .form-item {
@@ -41,7 +68,7 @@ label {
     font-weight: bold;
 }
 
-#name_surname, select, textarea {
+#name_surname, #dni_nie, select, textarea {
     background-color: rgb(229, 227, 209);
     border-radius: 5px;
 }
@@ -70,5 +97,14 @@ label {
     .form-item-button {
         padding-bottom: 20px;
         padding-left: 32%;
+    }
+
+    .block-table {
+        max-width: 100%;
+        overflow: auto;
+    }
+
+    .booking-table th {
+        padding: 10px;
     }
 }

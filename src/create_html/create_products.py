@@ -1,8 +1,6 @@
-from pathlib import Path
-from sys import path as systemPath
-from os import getcwd as getCurrentDirectory
-systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_accessories import get_all_data_from_accessories
+from pathlib import Path
+from os import getcwd as getCurrentDirectory
 
 def create_products():
     
@@ -41,7 +39,7 @@ def create_products():
                             <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
                         </div>
                         <nav class="nav-menu">
-                            <a href="./index.html">Inicio</a>
+                            <a href="./index.html">Home</a>
                             <a href="./catalog.html">Catalog</a>
                             <a href="./shops.html">Shops</a>
                             <a href="./contact.html">Contact</a>
@@ -50,88 +48,90 @@ def create_products():
                     </div>
                 </header>
                 <section>
-                """
+                    <div class="container-box-products">
+                        """
             
     for document in get_all_data_from_accessories()['documents']:
 
-        try:
-            features = ', '.join(str(i) for i in document['description']['features'])
-        except KeyError:
-            features = None
+        nameProduct = document['name']
+        markProduct = document['mark']
+        priceProduct = document['price']
+        stockProduct = document['on_sale']
+        discountProduct = document['discount']
 
         try:
-            material = ', '.join(str(i) for i in document['description']['material'])
+            featuresProduct = ', '.join(str(feature) for feature in document['description']['features'])
         except KeyError:
-            material = None
+            featuresProduct = None
 
         try:
-            color = ', '.join(str(i) for i in document['description']['color'])
+            materialProduct = ', '.join(str(material) for material in document['description']['material'])
         except KeyError:
-            color = None
+            materialProduct = None
 
         try:
-            size = ', '.join(str(i) for i in document['description']['size'])
+            colorProduct = ', '.join(str(color) for color in document['description']['color'])
         except KeyError:
-            size = None
+            colorProduct = None
 
-        name = document['name']
-        mark = document['mark']
-        price = document['price']
-        stock = document['on_sale']
-        discount = document['discount']
+        try:
+            sizeProduct = ', '.join(str(size) for size in document['description']['size'])
+        except KeyError:
+            sizeProduct = None
+
         
-        
-        
-        html += f'''<div class="container-box-products">
-                        <div class="box-products">
+        html += f'''<div class="box-products">
                             <i class="fa fa-shopping-bag" id="icon-products"></i>
-                            <h2 id="h2-products">{mark}</h2>
+                            <h2>{nameProduct}</h2>
                             <div class="box-products-information">
                                 <div class="box-products-information-items">
-                                    <h2 id="h2-products2">{name}</h2>
+                                    <h3>Characteristics</h3>
+                                    <p><b>Mark</b>: {markProduct}</p>
                                     '''
         
-        if features != None:
+        if featuresProduct != None:
             
-            html += f'''<p id="products"><b>Features</b>: {features}</p>
-                        '''
+            html += f'''<p><b>Features</b>: {featuresProduct}</p>
+                                    '''
         
-        if material != None:
+        if materialProduct != None:
             
-            html += f'''<p id="products"><b>Material</b>: {material}</p>
-                        '''
+            html += f'''<p><b>Material</b>: {materialProduct}</p>
+                                    '''
         
-        if  color != None:
+        if  colorProduct != None:
             
-            html += f'''<p id="products"><b>Available colors</b>: {color}</p>
-                        '''
+            html += f'''<p><b>Available colors</b>: {colorProduct}</p>
+                                    '''
 
-        if  size != None:
+        if  sizeProduct != None:
             
-            html += f'''<p id="products"><b>Size</b>: {size}</p>
-                        '''
+            html += f'''<p><b>Available sizes</b>: {sizeProduct}</p>
+                                '''
 
-        if discount == False or discount != False:
+        html += f'''</div>
+                                <div class="box-products-information-items">
+                                    <h3>Price</h3>
+                                    <p id=products><b>Price</b>: {priceProduct}€</p>
+                                    <p><b>Stock</b>: {stockProduct}</p>
+                                    '''
 
-            discount = 'Until the end of units'
+        if discountProduct is False:
+            html += f'''<p><b>Discount</b>: No discount at the moment</p>
+                                '''
+        else:
 
-            html += f'''</div>
-                        <div class="box-products-information-items">
-                            <h2 id="h2-products2">Price</h2>
-                            '''
-            html += f'''<p id=products><b>Current price</b>: {price} €</p>
-                            <p id=products><b>Stock</b>: {stock}</p>
-                            <p id=products><b>Limited offer</b>: {discount}</p>
-                            '''
-            html += f'''</div>
-                            <div>
+            html += f'''<p><b>Discount</b>: {discountProduct}%</p>
+                                '''
+        
+        html += f'''</div>
                             </div>
-                            </div>
+                            <div class="box-products-button"><a href="./buy-product.html" class="container-button">Buy Now!</a></div>
                         </div>
-                    </div>
-                    '''
+                        '''
     
-    html += '''</section>
+    html += '''</div>
+                </section>
                 <footer>
                     <div class="container-footer">
                         <p id="copyright">Copyright &#169; 2022</p>

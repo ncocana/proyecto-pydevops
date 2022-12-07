@@ -22,6 +22,9 @@
     font-size: 20px;
     color: rgb(0, 0, 0);
     margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: overline;
 }
 
 #icon-products {
@@ -38,8 +41,7 @@
 
 .box-products-information {
     display: flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     padding: 30px;
 }
 
@@ -47,47 +49,68 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 30px;
+    padding-left: 13%;
+    width: 50%;
 }
 
-footer .bottom #pcopy2{
-    padding-left: 35px;
-    text-align: left;
-    color:black;
-    font-size: 20px;
-    font-weight: bold;
+.box-products-information-items h3 {
     text-transform: uppercase;
-    text-shadow : 3px 3px 20px rgba(255, 255, 255, 0.74);
-    margin-top: none;
-}
-#clothes{
-    text-align: justify;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-transform: none;
-}
-
-#h2-products2{
-    text-transform: capitalize;
     font-weight: bold;
     text-align: left;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-decoration:underline ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+    margin-bottom: 15px;
 }
 
-#h2-products{
+.box-products-information-items p {
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+
+.box-products-button {
+    padding: 20px;
+}
+
+.container-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid black;
+    color: white;
+    text-decoration: none;
+    background: red;
     text-transform: uppercase;
-    font-weight:bolder;
-    text-decoration:overline;
-}
-#products{
-    text-align: left;
-    text-transform: capitalize;
-}
-footer .bottom #pcopy1{
-    padding-left: 20px;
-    text-align: left;
-    color:black;
-    font-size: 20px;
     font-weight: bold;
-    text-transform: capitalize;
-    margin-top: none;
+}
+
+.container-button:hover {
+    background: rgb(182, 0, 0);
+}
+
+.container-button:active { 
+    color: rgb(233, 161, 26);
+}
+
+/* iPhone SE: 375 x 667 */
+@media screen and ((min-width: 375px) and (min-height: 667px)) {
+    
+    .box-products-information {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 30px;
+        padding-left: 10%;
+    }
+
+    .box-products-information .box-products-information-items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 30px;
+        padding-left: 6%;
+        width: 90%;
+    }
+
 }

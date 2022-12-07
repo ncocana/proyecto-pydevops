@@ -1,5 +1,3 @@
-from sys import path as systemPath
-systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_companies import get_all_data_from_companies
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
@@ -22,7 +20,7 @@ def create_shops():
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="author" content="Samuel_Piedra and Noa_Coca�a">
+            <meta name="author" content="Samuel_Piedra and Noa_Cocaña">
             <meta name="description" content="rent bicycle page">
             <meta name="copyright" content="Samu&Noa">
             <meta name="generator" content="VisualStudioCode">
@@ -42,7 +40,7 @@ def create_shops():
                             <img src="./img/logo-webpage.png" height="65px" width="90px" alt="rental logo">  
                         </div>
                         <nav class="nav-menu">
-                            <a href="./index.html">Inicio</a>
+                            <a href="./index.html">Home</a>
                             <a href="./catalog.html">Catalog</a>
                             <a href="./shops.html">Shops</a>
                             <a href="./contact.html">Contact</a>
