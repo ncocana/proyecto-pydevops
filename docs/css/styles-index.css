@@ -30,3 +30,19 @@
     letter-spacing: 2px;
     text-shadow : 3px 3px 10px white;
 }
+
+video {
+    height: 300px;
+    width: 500px;
+    border-radius: 5%;
+    margin: 10px 0;
+}
+
+@media screen and (( max-width : 376px) and (max-height : 668px)){
+    video {
+        height: 250px;
+        width: 350px;
+        border-radius: 5%;
+        margin: 10px 0;
+    }
+}
