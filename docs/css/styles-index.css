@@ -11,8 +11,12 @@
     background-size: cover;
 }
 
+.section-index {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
 #title-index {
-    margin-top: 250px;
     font-size: 60px;
     font-weight: 600;
     text-transform: uppercase;

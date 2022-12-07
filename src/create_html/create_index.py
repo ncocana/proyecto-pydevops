@@ -49,7 +49,7 @@ def create_index():
                     </div>
                 </header>
                 <section>
-                    <div>
+                    <div class="section-index">
                         <h2 id="title-index">Rental Bikes</h2>
                         <p id="p-index"><i><b>the bikes never goes out of style</b></i></p>
                         <video controls>
