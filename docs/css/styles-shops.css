@@ -81,8 +81,8 @@
     border-radius: 10%;
 }
 
-/* iPhone SE: 377 x 667 */
-@media screen and ((min-width: 375px) and (max-width: 667px)) {
+/* iPhone SE: 375 x 667 */
+@media screen and ((min-width: 375px) and (min-height: 667px)) {
 
     .box-shops-information {
         display: flex;
