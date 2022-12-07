@@ -42,7 +42,8 @@ video {
     margin: 10px 0;
 }
 
-@media screen and (( max-width : 376px) and (max-height : 668px)){
+/* iPhone SE: 375 x 667 */
+@media screen and ((max-width : 376px) and (max-height : 668px)) {
     video {
         height: 250px;
         width: 350px;

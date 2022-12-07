@@ -64,39 +64,48 @@ def create_booking_bike():
                                         <th>ID</th>
                                         <th>Type</th>
                                         <th>Mark</th>
+                                        <th>Is it electric?</th>
                                         <th>Capacity</th>
                                         <th>Availability</th>
                                         <th>Rent price</th>
                                         <th>Broke price</th>
                                     </tr>
                                     '''
-        
-        #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
-        for document in get_all_data_from_bikes()['documents']:
+                                    
+    #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
+    for document in get_all_data_from_bikes()['documents']:
 
-            #Saves each value in a variable.
-            idBike = document['_id']
-            typeBike = document['type']
-            markBike = document['mark']
-            capacitykBike = document['characteristics']['bike_capacity']
+        #Saves each value in a variable.
+        idBike = document['_id']
+        typeBike = document['type']
+        markBike = document['mark']
+        capacitykBike = document['characteristics']['bike_capacity']
 
-            #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
-            avalaibilityBike = document['avalaibility']
-            if avalaibilityBike is True:
-                avalaibilityBike = 'Yes'
-            if avalaibilityBike is False:
-                avalaibilityBike = 'No'
+        #If it is an electric bike, the variable value will change to 'Yes'. Else, it will change to 'No'.
+        isEBike = document['characteristics']['electric_bike?']
+        if isEBike is True:
+            isEBike = 'Yes'
+        if isEBike is False:
+            isEBike = 'No'
 
-            priceRentBike = document['price_of_rent_per_hour']
-            priceBrokeBike = document['price_of_broke']
+        #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
+        avalaibilityBike = document['avalaibility']
+        if avalaibilityBike is True:
+            avalaibilityBike = 'Yes'
+        if avalaibilityBike is False:
+            avalaibilityBike = 'No'
 
-            #This will add the following html code to the variable 'html', creating a new row in the table in booking.html
-            #with the specified bike's information.
-            #Because is in a for loop, it will create a row for each bike.
-            html += f'''<tr>
+        priceRentBike = document['price_of_rent_per_hour']
+        priceBrokeBike = document['price_of_broke']
+
+        #This will add the following html code to the variable 'html', creating a new row in the table in booking.html
+        #with the specified bike's information.
+        #Because is in a for loop, it will create a row for each bike.
+        html += f'''<tr>
                                         <td>{idBike}</td>
                                         <td>{typeBike.title()}</td>
                                         <td>{markBike}</td>
+                                        <td>{isEBike}</td>
                                         <td>{capacitykBike}</td>
                                         <td>{avalaibilityBike}</td>
                                         <td>{priceRentBike}€</td>
@@ -122,17 +131,16 @@ def create_booking_bike():
                                 <select id="bike_id" name="bike_id" required>
                                     <option value="">Choose the bike's ID</option>
                                     '''
+                                    
+        #Saves each value in a variable.
+        idBike = document['_id']
+        typeBike = document['type']
 
-        for document in get_all_data_from_bikes()['documents']:
-
-            #Saves each value in a variable.
-            idBike = document['_id']
-
-            #This will add the following html code to the variable 'html', creating a option to select in the form in booking.html
-            #with the ID's bike.
-            #Because is in a for loop, it will create a option to select for each bike.
-            html += f'''<option value="{idBike}">{idBike}</option>
-                                    '''
+        #This will add the following html code to the variable 'html', creating a option to select in the form in booking.html
+        #with the ID's bike.
+        #Because is in a for loop, it will create a option to select for each bike.
+        html += f'''<option value="{idBike}">{idBike} - {typeBike.title()}</option>
+                                '''
 
         html += '''</select>
                             </div>
