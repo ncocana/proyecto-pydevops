@@ -1,18 +1,23 @@
+#To succesfuslly invoke the function 'get_all_data_from_accessories', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_accessories import get_all_data_from_accessories
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
 def create_products():
     
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/index.html'.
-    working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "products.html"
+    try:
+        #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/index.html'.
+        working_directory = Path(getCurrentDirectory())
+        path = working_directory / "docs" / "products.html"
 
-    #Opens the file with the purpose to write on it.
-    file = path.open('w', encoding="utf-8")
+        #Opens the file with the purpose to write on it.
+        file = path.open('w', encoding="utf-8")
 
 
-    html = """<!DOCTYPE html>
+        html = """<!DOCTYPE html>
     <html lang="en">
         <head>
             <title>Rental Bike - Products</title>
@@ -51,36 +56,36 @@ def create_products():
                     <div class="container-box-products">
                         """
             
-    for document in get_all_data_from_accessories()['documents']:
+        for document in get_all_data_from_accessories()['documents']:
 
-        nameProduct = document['name']
-        markProduct = document['mark']
-        priceProduct = document['price']
-        stockProduct = document['on_sale']
-        discountProduct = document['discount']
+            nameProduct = document['name']
+            markProduct = document['mark']
+            priceProduct = document['price']
+            stockProduct = document['on_sale']
+            discountProduct = document['discount']
 
-        try:
-            featuresProduct = ', '.join(str(feature) for feature in document['description']['features'])
-        except KeyError:
-            featuresProduct = None
+            try:
+                featuresProduct = ', '.join(str(feature) for feature in document['description']['features'])
+            except KeyError:
+                featuresProduct = None
 
-        try:
-            materialProduct = ', '.join(str(material) for material in document['description']['material'])
-        except KeyError:
-            materialProduct = None
+            try:
+                materialProduct = ', '.join(str(material) for material in document['description']['material'])
+            except KeyError:
+                materialProduct = None
 
-        try:
-            colorProduct = ', '.join(str(color) for color in document['description']['color'])
-        except KeyError:
-            colorProduct = None
+            try:
+                colorProduct = ', '.join(str(color) for color in document['description']['color'])
+            except KeyError:
+                colorProduct = None
 
-        try:
-            sizeProduct = ', '.join(str(size) for size in document['description']['size'])
-        except KeyError:
-            sizeProduct = None
+            try:
+                sizeProduct = ', '.join(str(size) for size in document['description']['size'])
+            except KeyError:
+                sizeProduct = None
 
         
-        html += f'''<div class="box-products">
+            html += f'''<div class="box-products">
                             <i class="fa fa-shopping-bag" id="icon-products"></i>
                             <h2>{nameProduct}</h2>
                             <div class="box-products-information">
@@ -89,48 +94,48 @@ def create_products():
                                     <p><b>Mark</b>: {markProduct}</p>
                                     '''
         
-        if featuresProduct != None:
+            if featuresProduct != None:
             
-            html += f'''<p><b>Features</b>: {featuresProduct}</p>
+                html += f'''<p><b>Features</b>: {featuresProduct}</p>
                                     '''
         
-        if materialProduct != None:
+            if materialProduct != None:
             
-            html += f'''<p><b>Material</b>: {materialProduct}</p>
+                html += f'''<p><b>Material</b>: {materialProduct}</p>
                                     '''
         
-        if  colorProduct != None:
+            if colorProduct != None:
             
-            html += f'''<p><b>Available colors</b>: {colorProduct}</p>
+                html += f'''<p><b>Available colors</b>: {colorProduct}</p>
                                     '''
 
-        if  sizeProduct != None:
+            if sizeProduct != None:
             
-            html += f'''<p><b>Available sizes</b>: {sizeProduct}</p>
+                html += f'''<p><b>Available sizes</b>: {sizeProduct}</p>
                                 '''
 
-        html += f'''</div>
+            html += f'''</div>
                                 <div class="box-products-information-items">
                                     <h3>Price</h3>
                                     <p id=products><b>Price</b>: {priceProduct}€</p>
                                     <p><b>Stock</b>: {stockProduct}</p>
                                     '''
 
-        if discountProduct is False:
-            html += f'''<p><b>Discount</b>: No discount at the moment</p>
+            if discountProduct is False:
+                html += f'''<p><b>Discount</b>: No discount at the moment</p>
                                 '''
-        else:
+            else:
 
-            html += f'''<p><b>Discount</b>: {discountProduct}%</p>
+                html += f'''<p><b>Discount</b>: {discountProduct}%</p>
                                 '''
         
-        html += f'''</div>
+            html += f'''</div>
                             </div>
                             <div class="box-products-button"><a href="./buy-product.html" class="container-button">Buy Now!</a></div>
                         </div>
                         '''
     
-    html += '''</div>
+        html += '''</div>
                 </section>
                 <footer>
                     <div class="container-footer">
@@ -141,5 +146,16 @@ def create_products():
         </body>
     </html>'''
 
-    file.write(html)
-    file.close()
+        file.write(html)
+        file.close()
+
+    except FileNotFoundError:
+
+        #If the file doesn't exit, it will create it.
+        #But if the directory doesn't exist, it will return a FileNotFoundError.
+        #With this try/except block, it will return the following message in case of a FileNotFoundError:
+        print("Directory not found.")
+
+if __name__ == '__main__':
+
+    create_products()

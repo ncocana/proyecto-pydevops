@@ -1,18 +1,23 @@
+#To succesfuslly invoke the function 'get_all_data_from_accessories', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_accessories import get_all_data_from_accessories
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
 def create_buy_product():
     
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/buy-products.html'.
-    working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "buy-product.html"
+    try:
+        #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/buy-products.html'.
+        working_directory = Path(getCurrentDirectory())
+        path = working_directory / "docs" / "buy-product.html"
 
-    #Opens the file with the purpose to write on it.
-    file = path.open('w', encoding="utf-8")
+        #Opens the file with the purpose to write on it.
+        file = path.open('w', encoding="utf-8")
 
-    #Saves the html content into the variable 'html'.
-    html = '''<!DOCTYPE html>
+        #Saves the html content into the variable 'html'.
+        html = '''<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Rental Bike - Buy a Product</title>
@@ -65,35 +70,36 @@ def create_buy_product():
                                         <th>Discount</th>
                                     </tr>
                                     '''
-    #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
-    for document in get_all_data_from_accessories()['documents']:
 
-        #Saves each value in a variable.
-        idProduct = document['_id']
-        nameProduct = document['name']
-        markProduct = document['mark']
-        priceProduct = document['price']
-        
-        discountProduct = document['discount']
-        if discountProduct is False:
-            discountProduct = "No discount"
-        else:
-            discountProduct = f"{discountProduct}%"
+        #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
+        for document in get_all_data_from_accessories()['documents']:
 
-        try:
-            colorProduct = ', '.join(str(color) for color in document['description']['color'])
-        except KeyError:
-            color = None
+            #Saves each value in a variable.
+            idProduct = document['_id']
+            nameProduct = document['name']
+            markProduct = document['mark']
+            priceProduct = document['price']
+            
+            discountProduct = document['discount']
+            if discountProduct is False:
+                discountProduct = "No discount"
+            else:
+                discountProduct = f"{discountProduct}%"
 
-        try:
-            sizeProduct = ', '.join(str(size) for size in document['description']['size'])
-        except KeyError:
-            size = None
+            try:
+                colorProduct = ', '.join(str(color) for color in document['description']['color'])
+            except KeyError:
+                color = None
 
-        #This will add the following html code to the variable 'html', creating a new row in the table in booking.html
-        #with the specified bike's information.
-        #Because is in a for loop, it will create a row for each bike.
-        html += f'''<tr>
+            try:
+                sizeProduct = ', '.join(str(size) for size in document['description']['size'])
+            except KeyError:
+                size = None
+
+            #This will add the following html code to the variable 'html', creating a new row in the table in booking.html
+            #with the specified bike's information.
+            #Because is in a for loop, it will create a row for each bike.
+            html += f'''<tr>
                                         <td>{idProduct}</td>
                                         <td>{nameProduct.title()}</td>
                                         <td>{markProduct.title()}</td>
@@ -104,7 +110,7 @@ def create_buy_product():
                                     </tr>
                                     '''
 
-    html += '''</tbody>
+        html += '''</tbody>
                             </table>
                         </div>
                         <h3>Buying formulary</h3>
@@ -122,7 +128,8 @@ def create_buy_product():
                                 <select id="product_id" name="product_id" required>
                                     <option value="">Choose the product's ID</option>
                                     '''
-    for document in get_all_data_from_accessories()['documents']:
+                                    
+        for document in get_all_data_from_accessories()['documents']:
 
         #Saves each value in a variable.
         idProduct = document['_id']
@@ -134,7 +141,7 @@ def create_buy_product():
         html += f'''<option value="{idProduct}">{idProduct} - {nameProduct.title()}</option>
                                 '''
 
-    html += '''</select>
+        html += '''</select>
                             </div>
                             <div class="form-item">
                                 <label for="details">Details:</label>
@@ -161,6 +168,17 @@ def create_buy_product():
 </html>
 '''
 
-    #Writes the content of the variable 'html' in the file created previously (buy-products.html), and then closes the file.
-    file.write(html)
-    file.close()
+        #Writes the content of the variable 'html' in the file created previously (buy-products.html), and then closes the file.
+        file.write(html)
+        file.close()
+
+    except FileNotFoundError:
+
+        #If the file doesn't exit, it will create it.
+        #But if the directory doesn't exist, it will return a FileNotFoundError.
+        #With this try/except block, it will return the following message in case of a FileNotFoundError:
+        print("Directory not found.")
+
+if __name__ == '__main__':
+
+    create_buy_product()

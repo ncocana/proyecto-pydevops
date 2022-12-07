@@ -2,7 +2,7 @@ import requests
 import json
 
 def count_type_bikes_sorted():
-    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/find"
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/aggregate"
 
     payload = json.dumps({
         "collection": "bikes",
@@ -21,7 +21,7 @@ def count_type_bikes_sorted():
     response = requests.request("POST", url, headers=headers, data=payload)
 
     result = json.loads(response.text)
-
+    
     return result
 
 if __name__ == "__main__":

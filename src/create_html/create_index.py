@@ -3,15 +3,16 @@ from os import getcwd as getCurrentDirectory
 
 def create_index():
     
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/index.html'.
-    working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "index.html"
+    try:
+        #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/index.html'.
+        working_directory = Path(getCurrentDirectory())
+        path = working_directory / "docs" / "index.html"
 
-    #Opens the file with the purpose to write on it.
-    file = path.open('w', encoding="utf-8")
+        #Opens the file with the purpose to write on it.
+        file = path.open('w', encoding="utf-8")
 
-    #Saves the html content into the variable 'html'.
-    html = '''<!DOCTYPE html>
+        #Saves the html content into the variable 'html'.
+        html = '''<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Rental Bike - Homepage</title>
@@ -68,6 +69,17 @@ def create_index():
 </html>
 '''
 
-    #Writes the content of the variable 'html' in the file created previously (index.html), and then closes the file.
-    file.write(html)
-    file.close()
+        #Writes the content of the variable 'html' in the file created previously (index.html), and then closes the file.
+        file.write(html)
+        file.close()
+
+    except FileNotFoundError:
+
+        #If the file doesn't exit, it will create it.
+        #But if the directory doesn't exist, it will return a FileNotFoundError.
+        #With this try/except block, it will return the following message in case of a FileNotFoundError:
+        print("Directory not found.")
+
+if __name__ == '__main__':
+
+    create_index()
