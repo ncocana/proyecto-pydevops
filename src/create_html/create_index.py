@@ -39,11 +39,11 @@ def create_index():
                             <img src="./img/logo-webpage.png" height="65px" width="90" alt="rental logo">  
                         </div>
                         <nav class="nav-menu">
-                            <a href="./index.html">Inicio</a>
+                            <a href="./index.html">Home</a>
                             <a href="./catalog.html">Catalog</a>
                             <a href="./shops.html">Shops</a>
                             <a href="./contact.html">Contact</a>
-                            <a href="">Products</a>
+                            <a href="./products.html">Products</a>
                         </nav>
                     </div>
                 </header>

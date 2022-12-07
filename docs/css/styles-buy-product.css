@@ -1,6 +1,6 @@
 /* STYLES EXCLUSIVES OF CONTACT.HTML */
 
-#background-booking {
+#background-buying {
     width: 100%;
     height: 100vh;
     background-image: url(../img/background-contact.jpg);
@@ -10,7 +10,7 @@
     background-size: cover;
 }
 
-.container-box .box-booking {
+.container-box .box-buying {
     height: auto;
     width: 95%;
     background: rgb(255, 255, 255);
@@ -20,7 +20,7 @@
     margin: 20px;
 }
 
-.container-box .box-booking h2 {
+.container-box .box-buying h2 {
     font-size: 20px;
     color: rgb(0, 0, 0);
     margin-bottom: 5px;
@@ -29,7 +29,7 @@
     text-transform: capitalize;
 }
 
-.container-box .box-booking h3 {
+.container-box .box-buying h3 {
     font-size: 18px;
     color: rgb(0, 0, 0);
     margin-bottom: 15px;
@@ -38,7 +38,7 @@
     text-transform: capitalize;
 }
 
-.booking-form {
+.buying-table {
     text-align: center;
     padding: 0.2em;
     padding-left: 14%;
@@ -51,7 +51,7 @@ th, td {
     border-collapse: collapse;
 }
 
-.booking-form td {
+.buying-table td {
     padding: 10px;
 }
 
@@ -87,8 +87,9 @@ label {
     background-color: rgb(200, 200, 200);
 }  
 
-/* iPhone SE: 377 x 667 */
-@media screen and ((min-width: 375px) and (max-width: 667px)){
+/* iPhone SE: 375 x 667 */
+@media screen and ((min-width: 375px) and (min-height: 667px)) {
+    
     .form-item {
         padding: 0.2em;
     }
@@ -98,12 +99,12 @@ label {
         padding-left: 32%;
     }
 
-    .container-box .box-booking {
+    .block-table {
         max-width: 100%;
-        overflow: auto
+        overflow: auto;
     }
 
-    .booking-form th {
+    .buying-table th {
         padding: 10px;
     }
 }

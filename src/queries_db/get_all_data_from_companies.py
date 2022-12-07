@@ -27,7 +27,8 @@ if __name__ == "__main__":
     #Tests if it gets KeyError or not inside a "for in".
     for document in get_all_data_from_companies()['documents']:
         try:
-            print(document['name'], '-', document['address']['street_address'], '-', document['contact']['email_address'])
+            print(document['name'], '-', document['address']['street_address'], '-', document['contact']['email_address'],'-',document['address']['zip_code'],'-',
+                   document['address']['district'],'-',document['address']['city'],'-',document['address']['country_code'])
         except KeyError:
             print("One of the field specified is not present on the document's collection. Try another document or field.")
             continue
