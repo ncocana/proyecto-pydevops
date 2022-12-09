@@ -41,9 +41,9 @@ def create_contact():
                     <nav class="nav-menu">
                         <a href="./index.html">Home</a>
                         <a href="./catalog.html">Catalog</a>
+                        <a href="./products.html">Products</a>
                         <a href="./shops.html">Shops</a>
                         <a href="./contact.html">Contact</a>
-                        <a href="./products.html">Products</a>
                     </nav>
                 </div>
             </header>

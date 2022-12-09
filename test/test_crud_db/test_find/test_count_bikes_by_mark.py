@@ -5,7 +5,7 @@ systemPath.insert(0, './')
 from src.crud_db.find.count_bikes_by_mark import count_bikes_by_mark
 import pytest
 
-@pytest.mark.test_mark
+@pytest.mark.test_count_mark
 def test_is_dict():
 
     #Assess if the value returned by the function 'count_bikes_by_mark' is a dictionary.

@@ -46,9 +46,9 @@ def create_buy_product():
                     <nav class="nav-menu">
                         <a href="./index.html">Home</a>
                         <a href="./catalog.html">Catalog</a>
+                        <a href="./products.html">Products</a>
                         <a href="./shops.html">Shops</a>
                         <a href="./contact.html">Contact</a>
-                        <a href="./products.html">Products</a>
                     </nav>
                 </div>
             </header>
@@ -131,14 +131,14 @@ def create_buy_product():
                                     
         for document in get_all_data_from_accessories()['documents']:
 
-        #Saves each value in a variable.
-        idProduct = document['_id']
-        nameProduct = document['name']
+            #Saves each value in a variable.
+            idProduct = document['_id']
+            nameProduct = document['name']
 
-        #This will add the following html code to the variable 'html', creating a option to select in the form in buy-product.html
-        #with the product's ID.
-        #Because is in a for loop, it will create a option to select for each product.
-        html += f'''<option value="{idProduct}">{idProduct} - {nameProduct.title()}</option>
+            #This will add the following html code to the variable 'html', creating a option to select in the form in buy-product.html
+            #with the product's ID.
+            #Because is in a for loop, it will create a option to select for each product.
+            html += f'''<option value="{idProduct}">{idProduct} - {nameProduct.title()}</option>
                                 '''
 
         html += '''</select>
