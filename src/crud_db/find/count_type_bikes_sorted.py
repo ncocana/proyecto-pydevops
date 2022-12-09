@@ -21,7 +21,7 @@ def count_type_bikes_sorted():
     response = requests.request("POST", url, headers=headers, data=payload)
 
     result = json.loads(response.text)
-
+    
     return result
 
 if __name__ == "__main__":

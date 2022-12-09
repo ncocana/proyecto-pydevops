@@ -1,3 +1,7 @@
+#To succesfuslly invoke the function 'get_all_data_from_accessories', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './src/')
 from queries_db.get_all_data_from_companies import get_all_data_from_companies
 from crud_db.find.count_bikes_by_mark import count_bikes_by_mark
 from pathlib import Path
@@ -6,15 +10,16 @@ from os import getcwd as getCurrentDirectory
 
 def create_shops():
     
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/shops.html'.
-    working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "shops.html"
+    try:
+        #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/shops.html'.
+        working_directory = Path(getCurrentDirectory())
+        path = working_directory / "docs" / "shops.html"
 
-    #Opens the file with the purpose to write on it.
-    file = path.open('w', encoding="utf-8")
+        #Opens the file with the purpose to write on it.
+        file = path.open('w', encoding="utf-8")
 
 
-    html = """<!DOCTYPE html>
+        html = """<!DOCTYPE html>
     <html lang="en">
         <head>
             <title>Rental Bike - Products</title>
@@ -93,7 +98,7 @@ def create_shops():
         count += 1
              
     
-    html += '''</div>
+        html += '''</div>
                 </section>
                 <footer>
                     <div class="container-footer">
@@ -104,5 +109,16 @@ def create_shops():
         </body>
     </html>'''
 
-    file.write(html)
-    file.close()
+        file.write(html)
+        file.close()
+
+    except FileNotFoundError:
+
+        #If the file doesn't exit, it will create it.
+        #But if the directory doesn't exist, it will return a FileNotFoundError.
+        #With this try/except block, it will return the following message in case of a FileNotFoundError:
+        print("Directory not found.")
+
+if __name__ == '__main__':
+
+    create_shops()
