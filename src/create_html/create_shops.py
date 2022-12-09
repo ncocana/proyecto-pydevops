@@ -72,7 +72,7 @@ def create_shops():
             phone_number = document['contact']['phone_number']
             google_map = document['address']['google_map']
             
-            nameMark = str(count_bikes_by_mark()['documents'][count]['_id']).replace(' ', '-')
+            nameMark = count_bikes_by_mark()['documents'][count]['_id'].replace(' ', '-')
             
             html += f'''<div class="box-shops">
                         <i class="fa fa-map-marker" id="icon-shop"></i>
