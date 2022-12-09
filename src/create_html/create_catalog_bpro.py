@@ -1,12 +1,12 @@
-from queries_db.get_all_data_from_bikes import get_all_data_from_bikes
+from queries_db.get_bikes_by_mark import get_bikes_by_mark
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
-def create_catalog():
+def create_catalog_bpro():
 
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/catalog.html'.
+    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/catalog-bikes-b-pro.html'.
     working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "catalog.html"
+    path = working_directory / "docs" / "catalog-bikes-b-pro.html"
 
     #Opens the file with the purpose to write on it.
     file = path.open('w', encoding="utf-8")
@@ -15,7 +15,7 @@ def create_catalog():
     html = '''<!DOCTYPE html>
     <html lang="en">
         <head>
-            <title>Rental Bike - Catalog</title>
+            <title>Rental Bike - Catalog of B-Pro</title>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,8 +51,9 @@ def create_catalog():
                     <div class="container-box">
                 '''
 
-    #Calls the function that queries to the database to get all the data from each document in 'bikes' collection.
-    for document in get_all_data_from_bikes()['documents']:
+    #Calls the function that queries to the database to get all the data from each document in 'bikes' collection
+    #that have 'B-Pro' as its mark.
+    for document in get_bikes_by_mark('B-Pro')['documents']:
 
         #Saves each value in a variable.
         typeBike = document['type']
@@ -99,7 +100,7 @@ def create_catalog():
         priceRentBike = document['price_of_rent_per_hour']
         priceBrokeBike = document['price_of_broke']
 
-        #This will add the following html code to the variable 'html', creating a box in catalog.html with the bike's information.
+        #This will add the following html code to the variable 'html', creating a box in catalog-bikes-b-pro.html with the bike's information.
         #Because is in a for loop, it will create a box for each bike.
         html += f'''<div class="box-catalog">
                                 <div>
@@ -155,6 +156,6 @@ def create_catalog():
         </body>
     </html>'''
 
-    #Writes the content of the variable 'html' in the file created previously (catalog.html), and then closes it.
+    #Writes the content of the variable 'html' in the file created previously (catalog-bikes-b-pro.html), and then closes it.
     file.write(html)
     file.close()

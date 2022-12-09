@@ -1,4 +1,5 @@
 from queries_db.get_all_data_from_companies import get_all_data_from_companies
+from crud_db.find.count_bikes_by_mark import count_bikes_by_mark
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
@@ -42,16 +43,17 @@ def create_shops():
                         <nav class="nav-menu">
                             <a href="./index.html">Home</a>
                             <a href="./catalog.html">Catalog</a>
+                            <a href="./products.html">Products</a>
                             <a href="./shops.html">Shops</a>
                             <a href="./contact.html">Contact</a>
-                            <a href="./products.html">Products</a>
                         </nav>
                     </div>
                 </header>
                 <section>
                 <div class="container-box">
                 """
-            
+    
+    count = 0
     for document in get_all_data_from_companies()['documents']:
 
         name = document['name']
@@ -65,6 +67,7 @@ def create_shops():
         phone_number = document['contact']['phone_number']
         google_map = document['address']['google_map']
         
+        nameMark = str(count_bikes_by_mark()['documents'][count]['_id']).replace(' ', '-')
         
         html += f'''<div class="box-shops">
                         <i class="fa fa-map-marker" id="icon-shop"></i>
@@ -83,8 +86,11 @@ def create_shops():
                         </div>
                         <iframe src="{google_map}" class="google-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-whe
                         n-downgrade"></iframe>
+                        <div class="box-shops-button"><a href="./catalog-bikes-{nameMark.lower()}.html" class="container-button">See bikes</a></div>
                     </div>
                     '''
+        
+        count += 1
              
     
     html += '''</div>

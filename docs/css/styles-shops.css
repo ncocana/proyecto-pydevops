@@ -81,6 +81,31 @@
     border-radius: 10%;
 }
 
+.box-products-button {
+    padding: 20px;
+}
+
+.container-button {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    border: 2px solid black;
+    color: white;
+    text-decoration: none;
+    background: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container-button:hover {
+    background: rgb(182, 0, 0);
+}
+
+.container-button:active { 
+    color: rgb(233, 161, 26);
+}
+
 /* iPhone SE: 375 x 667 */
 @media screen and ((max-width : 376px) and (max-height : 668px)) {
 
