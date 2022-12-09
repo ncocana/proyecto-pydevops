@@ -1,4 +1,4 @@
-#To succesfuslly invoke the function 'get_all_data_from_accessories', as it is in another folder,
+#To succesfuslly invoke the function 'get_all_data_from_companies', as it is in another folder,
 #we need to specify its path with 'sys'. And then it is possible to call it.
 from sys import path as systemPath
 systemPath.insert(0, './src/')

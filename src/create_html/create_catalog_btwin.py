@@ -1,18 +1,23 @@
+#To succesfuslly invoke the function 'get_bikes_by_mark', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './src/')
 from queries_db.get_bikes_by_mark import get_bikes_by_mark
 from pathlib import Path
 from os import getcwd as getCurrentDirectory
 
 def create_catalog_btwin():
 
-    #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/catalog-bikes-btwin.html'.
-    working_directory = Path(getCurrentDirectory())
-    path = working_directory / "docs" / "catalog-bikes-btwin.html"
+    try:
+        #Assigns the desired path to where the html file will create itself. In this case, the html will be in './docs/catalog-bikes-btwin.html'.
+        working_directory = Path(getCurrentDirectory())
+        path = working_directory / "docs" / "catalog-bikes-btwin.html"
 
-    #Opens the file with the purpose to write on it.
-    file = path.open('w', encoding="utf-8")
+        #Opens the file with the purpose to write on it.
+        file = path.open('w', encoding="utf-8")
 
-    #Saves the html content into the variable 'html'.
-    html = '''<!DOCTYPE html>
+        #Saves the html content into the variable 'html'.
+        html = '''<!DOCTYPE html>
     <html lang="en">
         <head>
             <title>Rental Bike - Catalog of BTWIN</title>
@@ -51,58 +56,58 @@ def create_catalog_btwin():
                     <div class="container-box">
                 '''
 
-    #Calls the function that queries to the database to get all the data from each document in 'bikes' collection
-    #that have 'BTWIN' as its mark.
-    for document in get_bikes_by_mark('BTWIN')['documents']:
+        #Calls the function that queries to the database to get all the data from each document in 'bikes' collection
+        #that have 'BTWIN' as its mark.
+        for document in get_bikes_by_mark('BTWIN')['documents']:
 
-        #Saves each value in a variable.
-        typeBike = document['type']
-        markBike = document['mark']
-        minAge = document['characteristics']['min_age']
+            #Saves each value in a variable.
+            typeBike = document['type']
+            markBike = document['mark']
+            minAge = document['characteristics']['min_age']
 
-        isForKids = document['characteristics']['for_kids?']
-        if isForKids is True:
-            isForKids = 'Yes'
-        if isForKids is False:
-            isForKids = 'No'
-        
-        capacitykBike = document['characteristics']['bike_capacity']
-        speedsBike = document['characteristics']['number_of_speeds']
-        
-        #If it is an array, it will unite it in one single string seperated by comas.
-        colorsBike = ', '.join(str(color) for color in document['characteristics']['color_bike'])
+            isForKids = document['characteristics']['for_kids?']
+            if isForKids is True:
+                isForKids = 'Yes'
+            if isForKids is False:
+                isForKids = 'No'
+            
+            capacitykBike = document['characteristics']['bike_capacity']
+            speedsBike = document['characteristics']['number_of_speeds']
+            
+            #If it is an array, it will unite it in one single string seperated by comas.
+            colorsBike = ', '.join(str(color) for color in document['characteristics']['color_bike'])
 
-        #If it is an electric bike, it will get the data from its characteristics as an electric bike. Else, it will not.
-        isEBike = document['characteristics']['electric_bike?']
-        if isEBike is True:
-            isEBike = 'Yes'
-            speedEBike = document['characteristics']['characteristics_electric_bike']['speed']
-            batteryEBike = document['characteristics']['characteristics_electric_bike']['battery_duration_per_km']
-            materialBatteryEBike = document['characteristics']['characteristics_electric_bike']['material_of_battery']
-        if isEBike is False:
-            isEBike = 'No'
+            #If it is an electric bike, it will get the data from its characteristics as an electric bike. Else, it will not.
+            isEBike = document['characteristics']['electric_bike?']
+            if isEBike is True:
+                isEBike = 'Yes'
+                speedEBike = document['characteristics']['characteristics_electric_bike']['speed']
+                batteryEBike = document['characteristics']['characteristics_electric_bike']['battery_duration_per_km']
+                materialBatteryEBike = document['characteristics']['characteristics_electric_bike']['material_of_battery']
+            if isEBike is False:
+                isEBike = 'No'
 
-        squaresSizeBike = ', '.join(str(size) for size in document['characteristics']['maker_information']['size of square'])
-        materialBike = document['characteristics']['maker_information']['material_of_bike']
-        developmentBike = document['characteristics']['maker_information']['development']
-        makerBike = document['characteristics']['maker_information']['maker']
+            squaresSizeBike = ', '.join(str(size) for size in document['characteristics']['maker_information']['size of square'])
+            materialBike = document['characteristics']['maker_information']['material_of_bike']
+            developmentBike = document['characteristics']['maker_information']['development']
+            makerBike = document['characteristics']['maker_information']['maker']
 
-        accessoriesBike = ', '.join(str(accessory) for accessory in document['characteristics']['acessories'])
+            accessoriesBike = ', '.join(str(accessory) for accessory in document['characteristics']['acessories'])
 
-        #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
-        avalaibilityBike = document['avalaibility']
-        if avalaibilityBike is True:
-            avalaibilityBike = 'Yes'
-        if avalaibilityBike is False:
-            avalaibilityBike = 'No'
+            #If the bike is avalaible, the variable value will be 'Yes'. Otherwise, it will be 'No'.
+            avalaibilityBike = document['avalaibility']
+            if avalaibilityBike is True:
+                avalaibilityBike = 'Yes'
+            if avalaibilityBike is False:
+                avalaibilityBike = 'No'
 
-        stockShop = document['units_in_shop']
-        priceRentBike = document['price_of_rent_per_hour']
-        priceBrokeBike = document['price_of_broke']
+            stockShop = document['units_in_shop']
+            priceRentBike = document['price_of_rent_per_hour']
+            priceBrokeBike = document['price_of_broke']
 
-        #This will add the following html code to the variable 'html', creating a box in catalog-bikes-btwin.html with the bike's information.
-        #Because is in a for loop, it will create a box for each bike.
-        html += f'''<div class="box-catalog">
+            #This will add the following html code to the variable 'html', creating a box in catalog-bikes-btwin.html with the bike's information.
+            #Because is in a for loop, it will create a box for each bike.
+            html += f'''<div class="box-catalog">
                                 <div>
                                 <i class="fa fa-bicycle"></i>
                                 <h3>{typeBike.title()}</h3>
@@ -119,15 +124,15 @@ def create_catalog_btwin():
                                     <li class="container-list-item"><b>Is it electric?:</b> {isEBike}</li>
                                     '''
 
-        #If it an electric bike, it will add the next information. Otherwise, it will not.
-        if isEBike == 'Yes':
-            html += f'''<li class="container-list-item"><h4>eBike's characteristics</h4></li>
+            #If it an electric bike, it will add the next information. Otherwise, it will not.
+            if isEBike == 'Yes':
+                html += f'''<li class="container-list-item"><h4>eBike's characteristics</h4></li>
                                     <li class="container-list-item"><b>Speed:</b> {speedEBike}</li>
                                     <li class="container-list-item"><b>Battery duration/km:</b> {batteryEBike}</li>
                                     <li class="container-list-item"><b>Battery's material:</b> {materialBatteryEBike.title()}</li>
                                     '''
 
-        html += f'''<li class="container-list-item"><h4>Maker's information</h4></li>
+            html += f'''<li class="container-list-item"><h4>Maker's information</h4></li>
                                     <li class="container-list-item"><b>Size of squares:</b> {squaresSizeBike}</li>
                                     <li class="container-list-item"><b>Bike's material:</b> {materialBike.title()}</li>
                                     <li class="container-list-item"><b>Development:</b> {developmentBike}</li>
@@ -145,7 +150,7 @@ def create_catalog_btwin():
                             </div>
                         '''
 
-    html += '''</div>
+        html += '''</div>
                 </section>
                 <footer>
                     <div class="container-footer">
@@ -156,6 +161,17 @@ def create_catalog_btwin():
         </body>
     </html>'''
 
-    #Writes the content of the variable 'html' in the file created previously (catalog-bikes-btwin.html), and then closes it.
-    file.write(html)
-    file.close()
+        #Writes the content of the variable 'html' in the file created previously (catalog-bikes-btwin.html), and then closes it.
+        file.write(html)
+        file.close()
+
+    except FileNotFoundError:
+
+        #If the file doesn't exit, it will create it.
+        #But if the directory doesn't exist, it will return a FileNotFoundError.
+        #With this try/except block, it will return the following message in case of a FileNotFoundError:
+        print("Directory not found.")
+
+if __name__ == '__main__':
+
+    create_catalog_btwin()
