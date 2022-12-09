@@ -58,23 +58,23 @@ def create_shops():
                 <div class="container-box">
                 """
     
-    count = 0
-    for document in get_all_data_from_companies()['documents']:
+        count = 0
+        for document in get_all_data_from_companies()['documents']:
 
-        name = document['name']
-        street = document['address']['street_address']
-        zip_code = document['address']['zip_code']
-        district = document['address']['district']
-        city = document['address']['city']
-        autonomous_community = document['address']['autonomous_community']
-        country_code = document['address']['country_code']
-        email = document['contact']['email_address']
-        phone_number = document['contact']['phone_number']
-        google_map = document['address']['google_map']
-        
-        nameMark = str(count_bikes_by_mark()['documents'][count]['_id']).replace(' ', '-')
-        
-        html += f'''<div class="box-shops">
+            name = document['name']
+            street = document['address']['street_address']
+            zip_code = document['address']['zip_code']
+            district = document['address']['district']
+            city = document['address']['city']
+            autonomous_community = document['address']['autonomous_community']
+            country_code = document['address']['country_code']
+            email = document['contact']['email_address']
+            phone_number = document['contact']['phone_number']
+            google_map = document['address']['google_map']
+            
+            nameMark = str(count_bikes_by_mark()['documents'][count]['_id']).replace(' ', '-')
+            
+            html += f'''<div class="box-shops">
                         <i class="fa fa-map-marker" id="icon-shop"></i>
                         <h2>{name}</h2>
                         <div class="box-shops-information">
@@ -95,7 +95,7 @@ def create_shops():
                     </div>
                     '''
         
-        count += 1
+            count += 1
              
     
         html += '''</div>
