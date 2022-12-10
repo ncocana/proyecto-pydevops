@@ -1,4 +1,4 @@
-# **Proyecto PyDevops**
+# Proyecto PyDevops
 
 **Table of contents**
 
@@ -6,7 +6,7 @@
 -   [**Introduction**](#introduction)
 -   [**Development**](#development)
     -   [**CI/CD**](#cicd)
--   [**Time comparison**](#time-comparison)
+-   [**Time spent on the project**](#time-spent-on-the-project)
     -   [**Clockify**](#clockify)
 
 # Introduction
@@ -32,6 +32,17 @@ The principles of continuos delivery and continuos integration along all the pro
 * Apply the appropriate settings. If we upload the code to a test repository, it goes to a test environment with its configurations.
 * To warn of past changes or errors found.
 
-# Time comparison
+# Time spent on the project
 
 ## Clockify
+
+In order to record the time we spent developing the project and see in which parts we spent more time working, we have used the page called [Clockify](https://clockify.me/) to carry out a control of the time spent on the development of the project.
+
+-   **GitHub/Git:** Investigate how Git, GitHub, and GitFlow work.
+-   **HTML/CSS:** Design and create the webpage using HTML and CSS.
+-   **Data API:** Use the DataAPI of MongoDB to extract the data needed for the webpage, as well as create CRUD functions to read, update, and delete data from the database.
+-   **Create HTML with Python:** Using the HTML created previously, develop the Python functions to create the HTML files with the data from the database.
+-   **Test Cases:** Add test cases (that can be executed with Pytest and Coverage) and try/except blocks to ensure the application works as intended.
+-   **JSON (Discarded):** This was our first take on how to extract the data from MongoDB using the "mongoexport" command to extract the data in JSONs from a Python file and create a function to parse through them and extract the data at will. But unfortunately, the function to parse through the JSONs didn't work as intended, which is why we ended up using the DataAPI from MongoDB to extract the data instead.
+
+![clockify](https://user-images.githubusercontent.com/117761602/206876998-ff386f17-6937-499a-aad1-fbd5e5766f24.jpg)
