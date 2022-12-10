@@ -11,3 +11,10 @@ For this we used the following programms in that order to obtain and transform o
 We create a database using MongoDB Atlas,we extract the data stored using the Mongo Data API and his Keys to programm into Python. In this order once the extract 
 it's succesfully,we added test cases for every file. At the end we programmed a function in Python to write the HTML for each page of our website and we mix them
 with CSS styles.
+
+## CI/CD
+The principles of continuos delivery and continuos integration along all the project are implemented in the following way:
+* Run unitary tests cases
+* Verifying the code integrity, that it can be compile, that there are no errors.
+* Apply the appropriate settings. If we upload the code to a test repository, it goes to a test environment with its configurations.
+* To warn of past changes or errors found.
