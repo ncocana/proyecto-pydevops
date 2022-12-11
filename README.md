@@ -15,6 +15,9 @@
     -   [**CI/CD**](#cicd)
 -   [**Time spent on the project**](#time-spent-on-the-project)
     -   [**Clockify**](#clockify)
+-   [**Conclusions**](#conclusions)
+    -   [**Possible improvements**](#possible-improvements)
+    -   [**Difficulties found**](#difficulties-found)
 
 # Introduction
 
@@ -29,7 +32,7 @@ For this, we used the following programms in that order to obtain and transform 
 ![image](https://user-images.githubusercontent.com/114516225/206863975-3b791014-7571-44f3-8c52-8f748cac5128.png)
 
 We created a database using MongoDB Atlas, and then extracted the data stored in it using the Mongo DataAPI and its keys in order to insert them into our webpage using Python. Once this is succesfully done, we programmed a serie of functions in Python to write the HTML for each page of our website and imported them in the "master" Python file, which will execute all the functions, creating the webpage executing only one file. The HTMLs will be created in a folder called "docs", which will already contain all the images and CSS needed by the HTML files.  
-At the end, we added test cases and try/except blocks on the files in charge of extracting the data and creating the webpage.
+At the end, we added [test cases](https://github.com/ncocana/proyecto-pydevops/tree/develop/test) and try/except blocks on the files in charge of extracting the data and creating the webpage.
 
 # Technical description
 
@@ -99,3 +102,16 @@ In order to record the time we spent developing the project and see in which par
 -   **JSON (Discarded):** This was our first take on how to extract the data from MongoDB using the "mongoexport" command to extract the data in JSONs from a Python file and create a function to parse through them and extract the data at will. But unfortunately, the function to parse through the JSONs didn't work as intended, which is why we ended up using the DataAPI from MongoDB to extract the data instead.
 
 ![clockify](https://user-images.githubusercontent.com/117761602/206876998-ff386f17-6937-499a-aad1-fbd5e5766f24.jpg)
+
+# Conclusions
+
+As result of this project we design a responsive web connected with a databases,with the tools that we had in this moment.
+The aim of this project is already complete,we implement all the demands wrote in the "Repte Crap-> Craft" or almost all. We did our best.
+
+### Possible improvements
+
+Looking ahead the next project,we are going to improve our visual content e.g, adding more images,the interface and the points our teachers will tell us.
+
+### Difficulties found
+
+Well for me Samuel,I was a bit lost in how to extract the data through Python but,I could overcome this situation with the help of my classmate. 
