@@ -36,54 +36,55 @@ At the end, we added [test cases](https://github.com/ncocana/proyecto-pydevops/t
 
 # Technical description
 
-### Project architecture
+## Project architecture
 
-* Our website is distributed in five main pages,each page is inside one small oval,the ovals with a bigger size are a short description of the content which changes depending on the oval you are reading at the moment. As you can see there are four pages with a rectangle below them,these rectangles are actions that the user can
-do.
-* The rectangles mentioned before are linked into one rectangle with a Python logo, this is because all the structure and elements involved in the diagram were  constructed by this programm.
-* The databases rectangle refers to how we stored the data in the database (arrays,strings,integers...etc),which determinates the distribution of the code wrote in the Python files and also into the structure of the the final product.
+* Our website is distributed in five main pages. Each page is inside one small oval (see image); the ovals with a bigger size are a short description of the content which changes depending on the oval you are reading at the moment. As you can see there are four pages with a rectangle below them, these rectangles are actions that the user can do.
+* The rectangles mentioned before are linked into one rectangle with a Python logo. This is because all the structure and elements involved in the diagram were  constructed by this language.
+* The databases rectangle refers to how we stored the data in the database (arrays, strings, integers, etc), which determinates the distribution of the code wrote in the Python files and into the structure of the final product.
 
 ![arquitecture](https://user-images.githubusercontent.com/114516225/206882958-be10ffd3-e9b4-4a1e-aa88-f55d1f31a58e.png)
 
-### Diagram of components
+## Diagram of components
 
 The diagram allows us to visualize the organization of the components and the dependency relationships between them. 
-* The dependencies are in decreasing order e.g; We can't run our website called Rental Bikes if we have some issues with Github pages soo this create a dependency.
-* Github Pages only wroks if it's linked to HTML files.HTML depends on the Python code wrote to create them.
-* If we don't configure well or we fail writing the queries to make an instance using the CRUD functions, Python returns an error,soo we haven't data to implement into a Python file and then transform it to HTML.
-* The CRUD functions can work only if we have created a databases before and also we have acces to their collections through a Data API Key.
+* The dependencies are in decreasing order (e.g: we can't run our website called "Rental Bikes" if we have some issues with Github pages so this creates a dependency).
+* Github Pages only works if it's linked to the folder (root or docs) where the HTML files are located. The HTML depends on the Python code wrote to create them.
+* If we don't configure well or fail writing the queries resulting on them not returning a dictionary using the CRUD functions, Python will return an err, meaning we won't have any data of the database to use on the Python files used to insert the data on and create the HTMLs.
+* The CRUD functions can only work if we have previously created a databases and have acces to their data through a DataAPI Key.
 
 ![components (2)](https://user-images.githubusercontent.com/114516225/206883546-cbb84384-bf86-47c2-a785-882c9b9b8d3e.jpg)
 
-### Diagram E/R
+## Diagram E/R
 
-This diagram explains and give sense to the way we stored the data and how we combine them to make the website funtional and optimized for our users and his fullfill possibles demands.
+This diagram explains and give sense to the way we stored the data and how we combine them to make the website funtional and optimized for our users and fullfill their possible demands.
 
 ![diagramer](https://user-images.githubusercontent.com/114516225/206885133-6b1f2e30-896e-4068-ba61-8772a7a4afa3.png)
 
 # Development methodology used
 
-We decided in pair the aspect and the distribution of our web,making a research and collecting ideas from real pages. Our first ideas were about the main page and we drawn it in paper during one class but we didn't reach an agreement. But we had an idea in common that was design an easy webpage model.
+We both decided the aspect and the distribution of our web, making a research and collecting ideas from real pages. Our first ideas were about the main page and we drawn it in paper during one class but we didn't reach an agreement. But we had an idea in common which was to design an easy webpage model.
 
-One of us watched a tutorial and create a navegation bar and deliver a idea that was accepted from both fellows,from this point we continue working and we implement our own style to our website. In every step to built our page we put on practise the Open Closed Principle (OCP) and Single Responsabilty Principle(SRP)
-We divided the project in order that both of us touch the differents subjects involved in this project like programming,markup languages,informatic systems and databases subject.
+One of us watched a tutorial and created a navegation bar and delivered an idea that was accepted from both fellows; from this point, we continued working and implemented our own style to our website. In every step to build our page, we put on practice the Open Closed Principle (OCP) and Single Responsabilty Principle (SRP).
+We divided the project in order so that both of us touched the differents subjects involved in this project such as programming, markup languages, informatic systems, and databases.
 
-### How we applied OCP
+## How we applied OCP
 
-When we write the CRUD operations we know that for extract the data we used a similar structure of code that mustn't be changed,if we do it we can't connect to our cluster.Soo this part it's closed to modification.
+When we wrote the CRUD operations, we knew that for extracting the data we needed to use a similar structure of code and that it shouldn't be changed, otherwise we couldn't connect to our cluster. So this part it's closed to modification.
 
-To extract data we modified and extend the code to write queries for obtain different data from mixed fields,as much as we want.This part is open to extension because we can write and used differents logical operators or make it simple with basic operators.
+To extract the data, we modified and extended the code to write queries to obtain different data from mixed fields, as much as we wanted. This part is open to extension because we can write and use differents logical operators or make it simple with basic operators.
 
-Other example can be our design pages once we decided the structure we didn't modified it.But passing the days we extend the content adding form,interactive buttoms,videos.
+Other example can be our design pages, once we decided the structure we didn't modified it. But passing the days, we extend the content adding forms, interactive buttons, videos, etc.
 
-### How we applied SRP
+## How we applied SRP
 
-Both of us take the responsability of the code we wrote and we worked in separated branches.Once a task was finished the other mate checks the code trying to detect mistakes and with the objective of optimized the code and make the responsable fix the errors or rewrite the code.
+Both of us took responsability of the code we wrote and worked in separated branches, one for each feature of the project. Once a task was finished, the other mate checked the code trying to detect mistakes and in order of optimizing the code and make the responsable fix the errors or rewrite the code.
 
-### CI/CD
+We also made sure to seperate functions of the src code and test cases into different files so as to better organize the project and promote the use of the Single Responsabilty Principle.
+
+## CI/CD
 
 The principles of continuos delivery and continuos integration along all the project are implemented in the following way:
-* Run unitary tests cases
+* Run unitary tests cases.
 * Verifying the code integrity (that it can be compile, that there are no errors, etc).
 * Apply the appropriate settings. If we upload the code to a test repository, it goes to a test environment with its configurations.
 * To warn of past changes or errors found.
@@ -105,13 +106,14 @@ In order to record the time we spent developing the project and see in which par
 
 # Conclusions
 
-As result of this project we design a responsive web connected with a databases,with the tools that we had in this moment.
-The aim of this project is already complete,we implement all the demands wrote in the "Repte Crap-> Craft" or almost all. We did our best.
+As result of this project and with the tools that we had at the moment, we designed a responsive web connected with a database.  
 
-### Possible improvements
+The aim of this project is already complete. We implemented all the demands (wrote in the "Repte Crap -> Craft") we could giving our knowledge at the moment and our limited time.
 
-Looking ahead the next project,we are going to improve our visual content e.g, adding more images,the interface and the points our teachers will tell us.
+## Possible improvements
 
-### Difficulties found
+Looking ahead the next project, we are going to improve our visual content (e.g: adding more images, the interface and the points our teachers will tell us).
 
-Well for me Samuel,I was a bit lost in how to extract the data through Python but,I could overcome this situation with the help of my classmate. 
+## Difficulties found
+
+Well for me Samuel, I was a bit lost in how to extract the data through Python, but I could overcome this situation with the help of my classmate.
