@@ -67,7 +67,13 @@ pip install -r requirements.txt
 
 ## Use
 
-Place yourself on the directory of the repository and execute the following command:
+Create a file called "DataAPIKey.py" and put inside your key to the DataAPI of MongoDB. [Here](https://www.mongodb.com/docs/atlas/api/data-api/) are the instructions of how to generate it. It's possible you have other variables, so you should revise all the code just in case you get an error.
+
+```
+APIKey = "your APIKey"
+```
+
+Now, place yourself on the directory of the repository and execute the following command:
 
 ```
 python .\src\create_webpage.py
