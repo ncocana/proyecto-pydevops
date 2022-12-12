@@ -8,7 +8,6 @@
 -   [**Technical description**](#technical-description)
     -   [**Project architecture**](#project-architecture)
     -   [**Diagram of components**](#diagram-of-components)
-    -   [**Diagram E/R**](#diagram-er)
 -   [**Development methodology used**](#development-methodology-used)
     -   [**How we applied OCP**](#how-we-applied-ocp)
     -   [**How we applied SRP**](#how-we-applied-srp)
@@ -21,9 +20,11 @@
 
 # Introduction
 
-This is a project of the first evaluation in the first year in Web application development.  
-The aim of this project is to create a webpage of rental bycicles where local people and tourists can check if there are bycicles to rent in an area. And you will ask: why bycicles?  
-Well, this is because the excessive numbers of cars in Palma of Mallorca, Balearic Islands. The idea is to promote the use of bycicles instead of cars.
+The excessive number of cars on the roads of the Balearic Islands has become a problem, especially in the high tourist season and in certain areas. To try to alleviate this situation, the Government of the Balearic Islands is considering various measures, including promoting the use of rental bicycles instead of rental cars.  
+
+The idea is to create a platform where local people and tourists can check the availability of rental bikes in an area. It is about building an aggregator where companies could use their fleet of bicycles.
+
+As students of the first year of the Higher Degree in Web Application Development, our project consists in creating a no-relational database using MongoDB and extracting the data with the purporse of inserting it on the webpage we will create using a Python. This Python program creates the HTML of the webpage while inserting the data of the database on them. This HTML will be automatically created on a folder called "docs" with all the other files needed for the webpage to properly display (CSS, images, videos, etc). Finally, the webpage will be deployed through GitHub Pages (this is why the files of the webpage need to be on a folder called "docs", so Pages can properly show the webpage).
 
 # Development
 
@@ -53,12 +54,6 @@ The diagram allows us to visualize the organization of the components and the de
 * The CRUD functions can only work if we have previously created a databases and have acces to their data through a DataAPI Key.
 
 ![components (2)](https://user-images.githubusercontent.com/114516225/206883546-cbb84384-bf86-47c2-a785-882c9b9b8d3e.jpg)
-
-## Diagram E/R
-
-This diagram explains and give sense to the way we stored the data and how we combine them to make the website funtional and optimized for our users and fullfill their possible demands.
-
-![diagramer](https://user-images.githubusercontent.com/114516225/206885133-6b1f2e30-896e-4068-ba61-8772a7a4afa3.png)
 
 # Development methodology used
 
