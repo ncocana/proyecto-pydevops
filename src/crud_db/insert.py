@@ -1,3 +1,8 @@
+#To succesfuslly invoke the variables inside the file 'DataAPIKey.py', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './')
+from DataAPIKey import *
 import requests
 import json
 
@@ -36,7 +41,7 @@ def insertBike():
   headers = {
   'Content-Type': 'application/json',
   'Access-Control-Request-Headers': '*',
-  'api-key': 'jNdMKZt2JmBwtYFJSwB8iRRx7M7OVqk0d1fPLuzaMDpLCkWOG7V5jgClzEYUKfV7', 
+  'api-key': API_samu, 
   }
   
   response = requests.request("POST", url, headers=headers, data=payload)

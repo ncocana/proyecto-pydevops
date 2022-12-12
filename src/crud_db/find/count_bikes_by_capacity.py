@@ -1,3 +1,8 @@
+#To succesfuslly invoke the variables inside the file 'DataAPIKey.py', as it is in another folder,
+#we need to specify its path with 'sys'. And then it is possible to call it.
+from sys import path as systemPath
+systemPath.insert(0, './')
+from DataAPIKey import *
 import requests
 import json
 
@@ -15,7 +20,7 @@ def count_bikes_by_capacity():
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': '6NFpzs43ERy96QMn8io03GXFuUPteyDRDb0cMzBLIe2ya0TOLsu9CzhtMx24hhAZ', 
+    'api-key': API_Noa, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
