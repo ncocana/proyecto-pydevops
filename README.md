@@ -4,7 +4,10 @@
 
 -   [**Proyecto PyDevops**](#proyecto-pydevops)
 -   [**Introduction**](#introduction)
--   [**Development**](#development)
+-   [**Manual**](#manual)
+    -   [**Pre-requirements**](#pre-requirements)
+    -   [**Instalation on Windows**](#instalation-on-windows)
+    -   [**Use**](#use)
 -   [**Technical description**](#technical-description)
     -   [**Project architecture**](#project-architecture)
     -   [**Diagram of components**](#diagram-of-components)
@@ -26,14 +29,49 @@ The idea is to create a platform where local people and tourists can check the a
 
 As students of the first year of the Higher Degree in Web Application Development, our project consists in creating a no-relational database using MongoDB and extracting the data with the purporse of inserting it on the webpage we will create using a Python. This Python program creates the HTML of the webpage while inserting the data of the database on them. This HTML will be automatically created on a folder called "docs" with all the other files needed for the webpage to properly display (CSS, images, videos, etc). Finally, the webpage will be deployed through GitHub Pages (this is why the files of the webpage need to be on a folder called "docs", so Pages can properly show the webpage).
 
-# Development
+# Manual
 
-For this, we used the following programms in that order to obtain and transform our files to run our website:
+## Pre-requirements
 
-![image](https://user-images.githubusercontent.com/114516225/206863975-3b791014-7571-44f3-8c52-8f748cac5128.png)
+-   `Git`
+-   `Python`
+-   `pip3`
 
-We created a database using MongoDB Atlas, and then extracted the data stored in it using the Mongo DataAPI and its keys in order to insert them into our webpage using Python. Once this is succesfully done, we programmed a serie of functions in Python to write the HTML for each page of our website and imported them in the "master" Python file, which will execute all the functions, creating the webpage executing only one file. The HTMLs will be created in a folder called "docs", which will already contain all the images and CSS needed by the HTML files.  
-At the end, we added [test cases](https://github.com/ncocana/proyecto-pydevops/tree/develop/test) and try/except blocks on the files in charge of extracting the data and creating the webpage.
+## Instalation on Windows
+
+First, open the terminal and clone the repository with the following command. Before doing this, make sure you're on the directory (folder) were you want to install this repository.
+
+```
+git clone https://github.com/ncocana/proyecto-pydevops.git
+```
+
+Create a virtual environment to install the dependecies needed. In this case, we will call the virtual environment as ".venv".
+
+```
+python3 -m venv .venv
+```
+
+Activate the virtual environment. Depending on what terminal you're on, you will need to execute the required file. For Windows Powershell it will be the one with extension ".ps1", for the CMD it will be ".bat", and for Unix or MacOS it will be called "activate". In this case, we will use the Powershell one:
+
+```
+.\.venv\Scripts\Activate.ps1
+```
+
+Now you will have to install the requirements with the following command:
+
+```
+pip install -r requirements.txt
+```
+
+## Use
+
+Place yourself on the directory of the repository and execute the following command:
+
+```
+python .\src\create_webpage.py
+```
+
+This will start the proccess to extract the data from the database, insert it on the HTML of the webpage, and create the HTML files for the webpage. Then you will only need to open one of the HTML files on the folder "docs" to start navegate on the webpage.
 
 # Technical description
 
