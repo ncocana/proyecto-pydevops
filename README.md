@@ -36,6 +36,8 @@ As students of the first year of the Higher Degree in Web Application Developmen
 -   `Git`
 -   `Python`
 -   `pip3`
+-   `requests`
+-   `pathlib`
 
 ## Instalation on Windows
 
