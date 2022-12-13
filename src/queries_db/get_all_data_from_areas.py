@@ -18,7 +18,7 @@ def get_all_data_from_areas():
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_Noa, 
+    'api-key': APIKey, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

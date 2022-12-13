@@ -8,15 +8,15 @@ import json
 
 def insertBike():
   
-  url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/insertOne"
-      
+  url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/insertOne"
+
   payload = json.dumps({
     "collection": "bikes",
     "database": "rental_bikes",
-    "dataSource": "SANDBOXX",
+    "dataSource": "Sandbox",
     "document": {
-                 "type":"insert bike name",
-                 "mark":"insert mark",
+                 "type":"urban prueba",
+                 "mark":"Balance toys",
                  "characteristics":{"min_age":{"$numberInt":"0"},
                                     "for_kids?":False,
                                     "bike_capacity":{"$numberInt":"0"},
@@ -41,7 +41,7 @@ def insertBike():
   headers = {
   'Content-Type': 'application/json',
   'Access-Control-Request-Headers': '*',
-  'api-key': API_samu, 
+  'api-key': APIKey, 
   }
   
   response = requests.request("POST", url, headers=headers, data=payload)

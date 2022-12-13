@@ -37,7 +37,7 @@ def get_bikes_by_characteristics(char1='', char2='', char3=''):
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_Noa, 
+    'api-key': APIKey, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

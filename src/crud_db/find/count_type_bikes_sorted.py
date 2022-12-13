@@ -20,7 +20,7 @@ def count_type_bikes_sorted():
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_Noa, 
+    'api-key': APIKey, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

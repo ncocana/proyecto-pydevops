@@ -19,7 +19,7 @@ def get_bikes_by_availability(boolean):
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_Noa, 
+    'api-key': APIKey, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

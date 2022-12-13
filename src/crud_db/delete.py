@@ -8,21 +8,21 @@ import json
 
 def deleteDocs():
     
-    url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/deleteOne" 
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/deleteOne"
 
     payload = json.dumps({
     "collection": "bikes",
     "database": "rental_bikes",
-    "dataSource": "SANDBOXX",
+    "dataSource": "Sandbox",
     "filter": {
-        "type": "insert bike name"
+        "type": "urban prueba"
     }
     })
 
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_samu, 
+    'api-key': APIKey, 
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)

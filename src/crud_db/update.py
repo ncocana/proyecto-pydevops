@@ -8,20 +8,19 @@ import json
 
 def updateOne():
 
-    url = "https://data.mongodb-api.com/app/data-nxnpm/endpoint/data/v1/action/updateOne"
+    url = "https://data.mongodb-api.com/app/data-ivdit/endpoint/data/v1/action/updateOne"
 
     payload = json.dumps({
     "collection": "bikes",
     "database": "rental_bikes",
-    "dataSource": "SANDBOXX",
+    "dataSource": "Sandbox",
     "filter": {
-        "type": '55555'
+        "type": 'urban prueba'
       },
     "upsert": False,
     "update": {
           "$set": {
-              "Status": "non-broke",
-              "Since":  "Insert date" 
+              "mark":"Ducati corse"
           }
       }
     })
@@ -29,7 +28,7 @@ def updateOne():
     headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': API_samu, 
+    'api-key': APIKey, 
     }
     
     response = requests.request("POST", url, headers=headers, data=payload)
