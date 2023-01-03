@@ -35,7 +35,7 @@ def gitPull():
 def gitPush():
 
     try:
-        commandPush = f"git push origin main"
+        commandPush = f"git push -u origin main"
         subprocess.run(commandPush)
         print("The files have been pushed to remote repository succesfully.")
 
