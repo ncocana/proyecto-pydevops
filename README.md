@@ -2,7 +2,6 @@
 
 **Table of contents**
 
--   [**Proyecto PyDevops**](#proyecto-pydevops)
 -   [**Introduction**](#introduction)
 -   [**Manual**](#manual)
     -   [**Pre-requirements**](#pre-requirements)
@@ -27,7 +26,7 @@ The excessive number of cars on the roads of the Balearic Islands has become a p
 
 The idea is to create a platform where local people and tourists can check the availability of rental bikes in an area. It is about building an aggregator where companies could use their fleet of bicycles.
 
-As students of the first year of the Higher Degree in Web Application Development, our project consists in creating a no-relational database using MongoDB and extracting the data with the purporse of inserting it on the webpage we will create using a Python. This Python program creates the HTML of the webpage while inserting the data of the database on them. This HTML will be automatically created on a folder called "docs" with all the other files needed for the webpage to properly display (CSS, images, videos, etc). Finally, the webpage will be deployed through GitHub Pages (this is why the files of the webpage need to be on a folder called "docs", so Pages can properly show the webpage).
+As students of the first year of the Higher Degree in Web Application Development, our project consists in creating a no-relational database using MongoDB and extracting the data with the purporse of inserting it on the webpage we will create using a Python. This Python program creates the HTML of the webpage while inserting the data of the database on them. This HTML will be automatically created on a folder called "docs" with all the other files needed for the webpage to properly display (CSS, images, videos, etc). Finally, the remote repository will automatically be pushed to GitHub so the webpage can be deployed through GitHub Pages (this is why the files of the webpage need to be on a folder called "docs", so Pages can properly show the webpage).
 
 # Manual
 
@@ -82,10 +81,12 @@ APIKey = "your APIKey"
 Now, place yourself on the directory of the repository and execute the following command:
 
 ```
-python .\src\create_webpage.py
+python .\rental_bikes.py
 ```
 
-This will start the proccess to extract the data from the database, insert it on the HTML of the webpage, and create the HTML files for the webpage. Then you will only need to open one of the HTML files on the folder "docs" to start navegate on the webpage.
+This will start the proccess to extract the data from the database, insert it on the HTML of the webpage, create the HTML files for the webpage, push them to GitHub, and after a while, they will be deployed on GitHub Pages.
+
+You can either view the result locally opening one of the HTML files on the folder "docs", or wait a few minutes until GitHub Pages deploys the webpage to start navegating it.
 
 # Technical description
 
