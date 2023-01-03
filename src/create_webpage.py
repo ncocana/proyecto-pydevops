@@ -1,3 +1,5 @@
+# For getting this functions when executing them from the main file (rental_bikes.py),
+# we need to add the path ('./src/') to them to their import path with the next command:
 from sys import path as systemPath
 systemPath.insert(0, './src/')
 from create_html.create_index import create_index
