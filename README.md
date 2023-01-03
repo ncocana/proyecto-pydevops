@@ -152,7 +152,7 @@ In order to record the time we spent developing the project and see in which par
 
 As result of this project and with the tools that we had at the moment, we designed a responsive web connected with a database.  
 
-The aim of this project is already complete. We implemented all the demands (wrote in the "Repte Crap -> Craft") we could giving our knowledge at the moment and our limited time.
+The aim of this project is already complete. We implemented all the demands (wrote in the document "Repte Crap -> Craft") we could giving our knowledge at the moment and our limited time.
 
 ## Possible improvements
 
