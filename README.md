@@ -50,13 +50,19 @@ git clone https://github.com/ncocana/proyecto-pydevops.git
 Create a virtual environment to install the dependecies needed. In this case, we will call the virtual environment as ".venv".
 
 ```
-python3 -m venv .venv
+python -m venv .venv
 ```
 
 Activate the virtual environment. Depending on what terminal you're on, you will need to execute the required file. For Windows Powershell it will be the one with extension ".ps1", for the CMD it will be ".bat", and for Unix or MacOS it will be called "activate". In this case, we will use the Powershell one:
 
 ```
 .\.venv\Scripts\Activate.ps1
+```
+
+It's possible that when executing this command, you get an error along the lines of "cannot be loaded because the execution of scripts is disabled on this system". If this happens, you will need to open Windows Powershell as administrator and execute the following command. When asked if you're sure, say "yes". This will allow you to execute scripts on your PC, such as the one you need to activate the virtual environment.
+
+```
+Set-executionpolicy remotesigned
 ```
 
 Now you will have to install the requirements with the following command:
@@ -67,7 +73,7 @@ pip install -r requirements.txt
 
 ## Use
 
-Create a file called "DataAPIKey.py" and put inside your key to the DataAPI of MongoDB. [Here](https://www.mongodb.com/docs/atlas/api/data-api/) are the instructions of how to generate it. It's possible you have other variables, so you should revise all the code just in case you get an error.
+Create a file called "DataAPIKey.py" and put inside your key to the DataAPI of MongoDB. [Here](https://www.mongodb.com/docs/atlas/api/data-api/) are the instructions of how to generate it.
 
 ```
 APIKey = "your APIKey"
