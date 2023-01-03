@@ -92,7 +92,7 @@ You can either view the result locally opening one of the HTML files on the fold
 
 ## Project architecture
 
-* Our website is distributed in five main pages. Each page is inside one small oval (see image); the ovals with a bigger size are a short description of the content which changes depending on the oval you are reading at the moment. As you can see there are four pages with a rectangle below them, these rectangles are actions that the user can do.
+* Our website is distributed in five main pages. Each page is inside one small oval (see image); the ovals with a bigger size are a short description of the content which changes depending on the oval you are reading at the moment. As you can see, there are four pages with a rectangle below them, these rectangles are actions that the user can do.
 * The rectangles mentioned before are linked into one rectangle with a Python logo. This is because all the structure and elements involved in the diagram were  constructed by this language.
 * The databases rectangle refers to how we stored the data in the database (arrays, strings, integers, etc), which determinates the distribution of the code wrote in the Python files and into the structure of the final product.
 
@@ -100,13 +100,9 @@ You can either view the result locally opening one of the HTML files on the fold
 
 ## Diagram of components
 
-The diagram allows us to visualize the organization of the components and the dependency relationships between them. 
-* The dependencies are in decreasing order (e.g: we can't run our website called "Rental Bikes" if we have some issues with Github pages so this creates a dependency).
-* Github Pages only works if it's linked to the folder (root or docs) where the HTML files are located. The HTML depends on the Python code wrote to create them.
-* If we don't configure well or fail writing the queries resulting on them not returning a dictionary using the CRUD functions, Python will return an err, meaning we won't have any data of the database to use on the Python files used to insert the data on and create the HTMLs.
-* The CRUD functions can only work if we have previously created a databases and have acces to their data through a DataAPI Key.
+This component diagram allows us to visualize the organization of the components and the dependency relationships between them. 
 
-![components (2)](https://user-images.githubusercontent.com/114516225/206883546-cbb84384-bf86-47c2-a785-882c9b9b8d3e.jpg)
+![Diagrama de componentes drawio](https://user-images.githubusercontent.com/117761602/210449865-9c5090ff-9648-4be7-b978-a6607146d047.png)
 
 # Development methodology used
 
@@ -115,19 +111,19 @@ We both decided the aspect and the distribution of our web, making a research an
 One of us watched a tutorial and created a navegation bar and delivered an idea that was accepted from both fellows; from this point, we continued working and implemented our own style to our website. In every step to build our page, we put on practice the Open Closed Principle (OCP) and Single Responsabilty Principle (SRP).
 We divided the project in order so that both of us touched the differents subjects involved in this project such as programming, markup languages, informatic systems, and databases.
 
+We worked in separated branches, one for each feature of the project. Once a task was finished, the other mate checked the code trying to detect mistakes and in order of optimizing the code and make the responsable fix the errors or rewrite the code.
+
 ## How we applied OCP
 
 When we wrote the CRUD operations, we knew that for extracting the data we needed to use a similar structure of code and that it shouldn't be changed, otherwise we couldn't connect to our cluster. So this part it's closed to modification.
 
 To extract the data, we modified and extended the code to write queries to obtain different data from mixed fields, as much as we wanted. This part is open to extension because we can write and use differents logical operators or make it simple with basic operators.
 
-Other example can be our design pages, once we decided the structure we didn't modified it. But passing the days, we extend the content adding forms, interactive buttons, videos, etc.
+Other example can be the design of our webpage; once we decided the structure, we didn't modified it. But passing the days, we extended the content by adding forms, interactive buttons, videos, etc.
 
 ## How we applied SRP
 
-Both of us took responsability of the code we wrote and worked in separated branches, one for each feature of the project. Once a task was finished, the other mate checked the code trying to detect mistakes and in order of optimizing the code and make the responsable fix the errors or rewrite the code.
-
-We also made sure to seperate functions of the src code and test cases into different files so as to better organize the project and promote the use of the Single Responsabilty Principle.
+We made sure to seperate functions of the src code and test cases into different files so as to better organize the project and promote the use of the Single Responsabilty Principle.
 
 ## CI/CD
 
@@ -160,8 +156,11 @@ The aim of this project is already complete. We implemented all the demands (wro
 
 ## Possible improvements
 
-Looking ahead the next project, we are going to improve our visual content (e.g: adding more images, the interface and the points our teachers will tell us).
+* Looking ahead the next project, we are going to improve our visual content (e.g: adding more images, working more on the interface, and try to add all the features we can between the ones our teachers will tell us).
+* Implement the Typer library.
 
 ## Difficulties found
 
-Well for me Samuel, I was a bit lost in how to extract the data through Python, but I could overcome this situation with the help of my classmate.
+We were a bit lost at the beggining on how to extract the required data from MongoDB using Python and parse through it, but we managed to overcome this problem as we advanced on the project and tried several things until we found one that it worked as we wanted.
+
+This project has help us to learn new things that normally would have taken us a longer time to, and we expect to keep learning and improve ourselves in the future.
