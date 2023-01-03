@@ -9,7 +9,6 @@ from create_html.create_catalog_bpro import create_catalog_bpro
 from create_html.create_catalog_ducati_corse import create_catalog_ducati_corse
 from create_html.create_catalog_balance_toys import create_catalog_balance_toys
 from create_html.create_contact import create_contact
-from update_github_pages import updateGitHubPages
 
 #Function to execute all the files needed to create the webpage.
 def create_webpage():
@@ -47,10 +46,7 @@ def create_webpage():
     #Creates the page 'contact.html'.
     create_contact()
 
-    #Updates the webpage deployed in GitHub Pages.
-    updateGitHubPages()
-
 if __name__ == "__main__":
-    
+
     #Execute it in the terminal with "python .\src\create_webpage.py".
     create_webpage()
