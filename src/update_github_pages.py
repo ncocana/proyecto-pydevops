@@ -14,7 +14,7 @@ def gitAdd():
 def gitCommit():
 
     try: 
-        commandCommit = f'git commit -m "feat(docs): update webpage on github pages"'
+        commandCommit = 'git commit -m "feat(docs): update webpage on github pages"'
         subprocess.run(commandCommit)
         print("The commit has been created succesfully.")
 
@@ -24,7 +24,7 @@ def gitCommit():
 def gitPull():
 
     try:
-        commandPull = f"git pull origin main"
+        commandPull = "git pull origin main"
         subprocess.run(commandPull)
         print("The files have been pulled from the remote repository succesfully.")
 
@@ -35,7 +35,7 @@ def gitPull():
 def gitPush():
 
     try:
-        commandPush = f"git push -u origin main"
+        commandPush = "git push -u origin main"
         subprocess.run(commandPush)
         print("The files have been pushed to remote repository succesfully.")
 
@@ -52,3 +52,8 @@ def updateGitHubPages():
     gitPull()
 
     gitPush()
+
+if __name__ == "__main__":
+
+    #Execute it in the terminal with "python .\src\update_github_pages.py".
+    updateGitHubPages()
