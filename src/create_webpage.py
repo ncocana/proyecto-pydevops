@@ -1,3 +1,5 @@
+from sys import path as systemPath
+systemPath.insert(0, './src/')
 from create_html.create_index import create_index
 from create_html.create_catalog import create_catalog
 from create_html.create_booking_bike import create_booking_bike

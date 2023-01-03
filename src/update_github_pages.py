@@ -14,7 +14,7 @@ def gitAdd():
 def gitCommit():
 
     try: 
-        commandCommit = 'git commit -m "feat(docs): update webpage on github pages"'
+        commandCommit = 'git commit -m "feat(docs): update webpage on github pages (test)"'
         subprocess.run(commandCommit)
         print("The commit has been created succesfully.")
 
