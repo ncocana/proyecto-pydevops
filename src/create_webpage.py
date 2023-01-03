@@ -50,6 +50,7 @@ def create_webpage():
     #Updates the webpage deployed in GitHub Pages.
     updateGitHubPages()
 
-
-#Execute it in the terminal with "python .\src\create_webpage.py".
-create_webpage()
+if __name__ == "__main__":
+    
+    #Execute it in the terminal with "python .\src\create_webpage.py".
+    create_webpage()
